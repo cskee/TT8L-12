@@ -1,2 +1,2 @@
-d awd awdawdadadwdw
-dawdad
+class Product:
+    def init(self,product,price)
