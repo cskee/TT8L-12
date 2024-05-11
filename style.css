@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    text-align: center;
+    margin: 0 auto 20px;
+    line-height: 60px;
+    color: #555;
+}
+
+.small-container {
+    max-width: 500px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.products {
+    flex-basis: calc(25% - 20px);
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 20px;
+    transition: transform 0.5s;
+    position: relative;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.products img {
+    width: 100%;
+}
+
+.rating .fas {
+    color: #ff523b;
+}
+
+.header {
+    background: radial-gradient(#fff, #ffd6d6);
+}
+
+.col-4:hover {
+    transform: translateY(-5px);
+}
+.row {
+    display: flex;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
