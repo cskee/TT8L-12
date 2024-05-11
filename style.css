@@ -18,12 +18,12 @@
     padding-right: 25px;
 }
 .products {
-    flex-basis: calc(25% - 20px);
+    flex-basis: calc(25% - 20px); .
     padding: 10px;
     min-width: 200px;
     margin-bottom: 20px;
     transition: transform 0.5s;
-    position: relative;
+    position: relative;  .
 }
 
 .products img {
