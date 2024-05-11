@@ -24,7 +24,6 @@
     margin-bottom: 20px;
     transition: transform 0.5s;
     position: relative;
-    box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
 .products img {
