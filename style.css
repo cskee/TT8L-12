@@ -8,26 +8,25 @@
     text-align: center;
     margin: 0 auto 20px;
     line-height: 60px;
-    color: #555;
 }
 
 .small-container {
-    max-width: 500px;
-    margin: auto;
+   
     padding-left: 25px;
     padding-right: 25px;
 }
 .products {
-    flex-basis: calc(25% - 20px); .
+    flex-basis: calc(25%) ;
     padding: 10px;
     min-width: 200px;
     margin-bottom: 20px;
     transition: transform 0.5s;
-    position: relative;  .
+    position:relative;
 }
 
 .products img {
     width: 100%;
+    height: auto;
 }
 
 .rating .fas {
@@ -35,15 +34,16 @@
 }
 
 .header {
-    background: radial-gradient(#fff, #ffd6d6);
+    background: radial-gradient(#fff, #347fc1);
+}
+.header1 {
+    background: radial-gradient(#fff, #4b07e9);
 }
 
-.col-4:hover {
+.products:hover{
     transform: translateY(-5px);
 }
 .row {
     display: flex;
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
+    margin-top: 20px;
 }
