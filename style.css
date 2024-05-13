@@ -9,6 +9,9 @@
     margin: 0 auto 20px;
     line-height: 60px;
 }
+body{
+    padding-top:0px;
+}
 
 .small-container {
    
@@ -27,6 +30,9 @@
 .products img {
     width: 100%;
     height: auto;
+    border-radius: 10px;
+    aspect-ratio: 3/3;
+    object-fit: cover;
 }
 
 .rating .fas {
