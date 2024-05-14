@@ -6,9 +6,11 @@
 <body>
     <nav class="nav_one">
         <ul>
-            <li><a href="#">Users</a></li>
-            <li><a>Bag</a></li>
-            <li><a>Help</a></li>
+            <ul>
+                <li style="position: fixed;top:opx;left: 1400px;"><a href="#">Users</a></li>
+                <li style="position: fixed;top:opx; left: 1300px;"><a>Bag</a></li>
+                <li style="position: fixed;top:opx;left: 1200px;"><a>Help</a></li>
+            </ul>
         </ul>
 
 
@@ -28,6 +30,10 @@
     <h1 style="position :absolute; top: 200px; left: 120px;color: rgb(4, 127, 175); font-size: 325%;">MMU   SHOP</h1><h2 style="position: absolute; top: 260px;left: 50px; font-size: 250%;color: rgba(13, 13, 13, 0.223);">
         The best way to buy the products you love.
     </h2>
+
+    <video autoplay loop muted plays-inline class="back-video">
+        <source src="{{ url_for('static',filename='Aerial and on the ground view of Multimedia University (MMU) Cyberjaya Campus (1).mp4')}}">
+    </video>
 
     {% if mmustudent %}
       <p style="position: absolute; top: 270px; left: 1200px;">MMU Student!!</p>

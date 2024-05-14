@@ -24,7 +24,7 @@ nav ul{
 
 nav ul li a{
     line-height: 140px;
-    color: #fff;
+    color: white;
     padding: 12px 30px;
     text-decoration: none;
     font-size:14px;
@@ -38,36 +38,23 @@ nav ul li a:hover{
 }
 
 .nav_one{
-    position: fixed;
-    top: 0;
-    left: 0;
+    top:0;
+    left:0;
     width: 100%;
     height: 40px;
     padding: 10px 90px;
     box-sizing: border-box;
-    background: rgba(220, 220, 224, 0.76);
-    
-}
+    background: lightgrey;
 
-.nav_one{
-    list-style: none;
-    float: right;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
-
 
 .nav_one li a{
     line-height: 40px;
     color: black;
-    padding: 12px 30px;
+    padding: 15px 30px;
     text-decoration: none;
     text-transform: capitalize;
     font-size:10px;
-    margin-left: 30px;
     font-weight: bold;
     
 }
@@ -75,4 +62,14 @@ nav ul li a:hover{
 .nav_one ul li a:hover{
     background: white;
     border-radius: 4px;
+}
+
+.back-video{
+    position: absolute;
+    top: 450px;
+    left: 0;
+    min-width: 100%;
+    min-height: 20%;
+    z-index: 0; 
+    filter: brightness(100%)
 }
