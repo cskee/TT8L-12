@@ -12,6 +12,10 @@ def mmustudent(name):
 def notmmustudent(name):
     return render_template("homepage.html",name=name)
 
+@app.route("/2-handshop")
+def secondhandshop():
+    return render_template("2-handshop.html")
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     global mmu_student
