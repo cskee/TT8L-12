@@ -57,24 +57,3 @@ body{
     display: flex;
     margin-top: 20px;
 }
-.row::-webkit-scrollbar{
-    width: 0;
-}
-.container1 {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background: linear-gradient(#2ecc71)  
-}
-.scroll-container {
-    overflow-x: scroll;
-    width: 100%;
-    padding: 40px 0px;
-    height: auto;
-    display: flex;
-    flex-wrap: nowrap;
-    position: relative;
-    scroll-behavior: smooth;
-}
