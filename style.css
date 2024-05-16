@@ -8,6 +8,7 @@
     text-align: center;
     margin: 0 auto 20px;
     line-height: 60px;
+    font-style: oblique;
 }
 body{
     padding-top:0px;
@@ -32,7 +33,8 @@ body{
     height: auto;
     border-radius: 10px;
     aspect-ratio: 3/3;
-    object-fit: cover;
+    object-fit:cover;
+    box-shadow: 10px 7px 20px orange;
 }
 
 .rating .fas {
@@ -40,16 +42,39 @@ body{
 }
 
 .header {
-    background: radial-gradient(#fff, #347fc1);
+    background: linear-gradient(#c21616, #347fc1);
 }
 .header1 {
-    background: radial-gradient(#fff, #4b07e9);
+    background: linear-gradient(#347fc1, #c21616);
 }
-
+.header2 {
+    background: linear-gradient(#c21616, #347fc1);
+}
 .products:hover{
     transform: translateY(-5px);
 }
 .row {
     display: flex;
     margin-top: 20px;
+}
+.row::-webkit-scrollbar{
+    width: 0;
+}
+.container1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(#2ecc71)  
+}
+.scroll-container {
+    overflow-x: scroll;
+    width: 100%;
+    padding: 40px 0px;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    position: relative;
+    scroll-behavior: smooth;
 }
