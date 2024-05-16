@@ -42,3 +42,9 @@ body{
 .navbar .menu li a:hover{
     border-bottom: 4px solid cornflowerblue;
 }
+
+.pheading{
+    text-align: center;
+    margin: 30px 0;
+    color: black;
+}
