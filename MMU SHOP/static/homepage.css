@@ -74,3 +74,15 @@ nav ul li a:hover{
     z-index: -1; 
     filter: brightness(100%)
 }
+
+.categories{
+    position: absolute;
+    top: 1680px;
+    left: 10px;
+    z-index: -1;
+
+}
+
+.img{
+    max-width: 100%;
+}
