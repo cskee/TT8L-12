@@ -8,7 +8,9 @@
     text-align: center;
     margin: 0 auto 20px;
     line-height: 60px;
-    font-style: oblique;
+    font-style:oblique;
+    font-size: 30px;
+    margin-bottom: -20px;
 }
 body{
     padding-top:0px;
@@ -35,6 +37,7 @@ body{
     aspect-ratio: 3/3;
     object-fit:cover;
     box-shadow: 10px 7px 20px orange;
+    border: 1px solid black;
 }
 
 .rating .fas {
@@ -55,5 +58,35 @@ body{
 }
 .row {
     display: flex;
+    margin-top: 15px;
+}
+.products .box{
+    display: flex;
     margin-top: 20px;
+    justify-content:space-between;
+    align-items: center;
+}
+.box .price{
+    font-size: 20px;
+    font-weight: bold;
+}
+.box .button {
+    font-size: 13px;
+    color: rgb(255, 51, 51);
+    padding: 15px 15px;
+    font-weight: 900;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 30px;
+}
+.box.button:hover{
+    font-size: larger;
+    background-color: aqua;
+    color: #ff523b;
+}
+
+.proname{
+    font-weight: 800;
+    font-size: 20px;
+    color: black;
+    padding: 30 0px;
 }
