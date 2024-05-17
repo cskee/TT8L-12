@@ -11,6 +11,7 @@
     font-style:oblique;
     font-size: 30px;
     margin-bottom: -20px;
+    text-decoration: underline;
 }
 body{
     padding-top:0px;
@@ -72,16 +73,16 @@ body{
 }
 .box .button {
     font-size: 13px;
-    color: rgb(255, 51, 51);
-    padding: 15px 15px;
-    font-weight: 900;
+    background-color: white;
+    color: black;
+    padding: 12px 12px;
+    font-weight:1000;
     border: 1px solid rgb(255, 0, 0);
     border-radius: 30px;
 }
-.box.button:hover{
-    font-size: larger;
-    background-color: aqua;
-    color: #ff523b;
+.button:hover{
+    color: white;
+    background-color: black;
 }
 
 .proname{
@@ -89,4 +90,8 @@ body{
     font-size: 20px;
     color: black;
     padding: 30 0px;
+}
+.border-box{
+    background-color: darkolivegreen;
+    border-radius: 10px;
 }
