@@ -45,17 +45,30 @@
 <h3 style="position: absolute; top: 1320px; left: 50%; transform: translateX(-50%); font-size: 150%; color: rgba(49, 49, 49, 0.555);">Take a look at what's new right now</h3>
 <h2 style= "position: absolute; top:1350;left: 50%; transform: translateX(-50%);font-size: 230%;">Shop the latest trends in fashion and accessories</h2>
 <h3 style="position: absolute; top: 1420px; left: 50%; transform: translate(-50%);font-size: 150%; color: grey">Shop now and make a fashion statement</h3>
-<h1 style="position: absolute; top: 1530px; left: 10px; font-size: 325%;">The latest</h3>
+<h1 style="position: absolute; top: 1530px; left: 100px; font-size: 325%;">The latest</h3>
 
-<div class="categories">
-    <div class="row">
-        <div class="col-3">
-            <img src="{{ url_for('static',filename='shoes1.jpg')}}">
-        </div>
-        <div class="col-3">
-            <img>
-        </div>
-        <div class="col-3"></div>
+<div class="product-container1">
+    <div class="product">
+        <img src="{{url_for('static',filename='2-hand1.png')}}">
+        <h2 class="product-title">Fashion clothes</h2>
+        <p class="product-price">
+            <span class="original-price">$129.99</span>
+            <span class="discounted-price">$99.99</span>
+            <span class="discount">10% off</span>
+        </p>
+        <p class="product-description">2-handshop</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+        <h2 class="product-title">Hat</h2>
+        <p class="product-price">$99.99</p>
+        <p class="product-description">Men features</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='hat2.png')}}" alt="Product Image" class="product-image">
+        <h2 class="product-title">Product Title</h2>
+        <p class="product-price">$89.99</p>
+        <p class="product-description">Men features</p>
     </div>
 </div>
 
