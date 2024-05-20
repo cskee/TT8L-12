@@ -154,3 +154,47 @@ nav ul li a:hover{
     scroll-behavior: smooth;
     width: calc(100% - 200px);
 }
+
+.product-container3 {
+    display: flex;
+    gap: 20px; 
+    padding-left: 100px; 
+    margin-top: 250px;
+    overflow-x: auto;
+    width: 100%;
+    scroll-behavior: smooth;
+    width: calc(100% - 200px);
+}
+
+.product-container4 {
+    display: flex;
+    gap: 20px; 
+    padding-left: 100px; 
+    margin-top: 250px;
+    overflow-x: auto;
+    width: 100%;
+    scroll-behavior: smooth;
+    width: calc(100% - 200px);
+}
+
+.product-container5 {
+    display: flex;
+    gap: 20px; 
+    padding-left: 100px; 
+    margin-top: 250px;
+    overflow-x: auto;
+    width: 100%;
+    scroll-behavior: smooth;
+    width: calc(100% - 200px);
+}
+
+.product-container6 {
+    display: flex;
+    gap: 20px; 
+    padding-left: 100px; 
+    margin-top: 250px;
+    overflow-x: auto;
+    width: 100%;
+    scroll-behavior: smooth;
+    width: calc(100% - 200px);
+}
