@@ -90,6 +90,11 @@ body{
     padding: 0 20px;
 }
 
+.products .card .rating{
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
 .products .card .box{
     display: flex;
     justify-content: space-between;
