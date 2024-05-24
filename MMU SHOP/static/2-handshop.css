@@ -54,3 +54,35 @@ nav ul li a:hover{
     background: transparent;
 
 }
+
+.types_container{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding: 10px;
+    padding-top: 10px;
+    width: 220px;
+    overflow-y: auto;
+    margin-top: 280px;
+    
+
+
+}
+
+.type{
+    background-color: rgb(241, 241, 241);
+    border: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 30px;
+    justify-content: center;
+    text-align: left;
+}
+
+.type h2{
+    margin: 0;
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom:10px;
+    font-size: 125%;
+}
