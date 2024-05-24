@@ -8,6 +8,7 @@ mmu_student = False
 def mmustudent(name):  
     return render_template("homepage.html",name=name,mmustudent=mmustudent)
 
+
 @app.route("/notmmustudent/<name>")
 def notmmustudent(name):
     return render_template("homepage.html",name=name)
