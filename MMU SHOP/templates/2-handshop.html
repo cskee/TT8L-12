@@ -1,0 +1,244 @@
+<html>
+<head>
+<title>2-handshop</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='2-handshop.css') }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('mmustudent',name='your name here') }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop')}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ='#'>MMU Stuff</a></li>
+            </ul>
+
+    </nav>
+<h1 style="position: absolute; top: 180px; left: 10px;font-size: 325%;">2-handshop</h1>
+<form>
+    <div class="search" style="position: absolute; top: 220px; right: 100px;">
+        <span class="search-icon material-symbols-outlined">search</span>
+        <input class="search-input" type="search" placeholder="Search.." >
+    </div>
+
+    <div class="types_container">
+        <div class="type">
+            <h2>shoes</h2>
+        </div>
+        <div class="type">
+            <h2>clothes</h2>
+        </div>
+        <div class="type">
+            <h2>hat</h2>
+        </div>
+        <div class="type">
+            <h2>laptop</h2>
+        </div>
+        <div class="type">
+            <h2>smartphone</h2>
+        </div>
+        <div class="type">
+            <h2>stationary</h2>
+        </div>
+    </div>
+
+    <div class="product-container1">
+
+        <div class="product">
+            <img src="{{url_for('static',filename='2-hand1.png')}}">
+            <h2 class="product-title">Fashion clothes</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hat1.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+        
+        </div>
+    </div>
+
+    <div class="conclusion">
+        <h1>2-handshop</h1>
+        <h3>Checkout our other products</h3>
+        
+        <div class="navimg">
+            <div class="textimg">
+                <img src="{{url_for('static',filename='2-handimg.png')}}">
+                <div class="text-over-image">2-handshop</div>
+            </div>
+            
+        </div>
+        
+    </div>
+</form>
+</body>
+</html>

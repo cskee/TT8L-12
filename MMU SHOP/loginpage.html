@@ -1,0 +1,44 @@
+<html>
+<link rel="stylesheet" href="loginpage2.css">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+<div class="wrapper">
+    <div class="form-wrapper sign-in"></div>            
+       <form action = "http://localhost:5000/login" method = "post">
+     
+    
+          <p style="position :absolute;top :130px;font-size: 325%;left: 690px;">Email</p>
+          <p style="position: absolute;top: 220px; font-size: 150%;left: 580px;">If you have mmu email , please use it</p>
+
+          <div class="input-group">
+             <input type="email" name="email" placeholder="Email" 
+             required>
+             <i class='bx bxs-user'></i>
+          </div>
+          <div class="input-group">
+             <input type="password" name="password" placeholder="Password" required>
+             <i class='bx bxs-lock-alt' ></i>
+          </div>
+
+          <div class="remember-forgot">
+             <label><input type="checkbox">Remember me</label>  
+             <a href="#">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn"></button>
+
+          <div class="register-link">
+             <p>Don't have an account?</p> <a
+             href="#">Register </a>
+          </div>
+    
+
+
+     
+
+
+
+
+ </form>      
+</html>
