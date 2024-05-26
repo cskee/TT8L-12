@@ -13,9 +13,14 @@ def mmustudent(name):
 def notmmustudent(name):
     return render_template("homepage.html",name=name)
 
-@app.route("/2-handshop")
-def secondhandshop():
-    return render_template("2-handshop.html")
+@app.route("/2-handshop/<name>")
+def secondhandshop(name):
+    return render_template("2-handshop.html",name=name,mmustudent=mmustudent)
+
+@app.route("/not2-handshop/<name>")
+def notsecondhandshop(name):
+    return render_template("2-handshop.html" ,name=name)
+
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():

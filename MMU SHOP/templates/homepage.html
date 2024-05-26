@@ -16,17 +16,33 @@
 
     </nav>
 
+    {% if mmustudent %}
     <nav>
         <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
             <ul>
-                <li style="position: fixed; top:10px; left: 350px;"><a href ="#">Home</a></li>
-                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop') }}">2-hand shop</a></li>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{url_for('mmustudent' ,name=name,mmustudent=mmustudent)}}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop',name=name,mmustudent=mmustudent) }}">2-hand shop</a></li>
                 <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
                 <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
                 <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
                 <li style="position: fixed; top: 10px; left: 1250px;"><a href ='#'>MMU Stuff</a></li>
             </ul>
     </nav>
+    {% else %}
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{url_for('notmmustudent', name=name)}}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('notsecondhandshop',name=name) }}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ='#'>MMU Stuff</a></li>
+            </ul>
+    </nav>
+    {% endif %}
+
+
     <h1 style="position :absolute; top: 200px; left: 120px;color: rgb(4, 127, 175); font-size: 325%;">MMU   SHOP</h1><h2 style="position: absolute; top: 260px;left: 50px; font-size: 250%;color: rgba(13, 13, 13, 0.223);">
         The best way to buy the products you love.
     </h2>
