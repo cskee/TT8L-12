@@ -37,7 +37,13 @@ def login():
             username = email.split('@')[0]
             return redirect(url_for('notmmustudent',name=username))
     else:
-        return render_template("login.html")
+        return render_template("loginpage.html")
+    
+    def logout():
+        response = make_response(redirect(url_for('login')))
+        response.set_cookie('mmustudent','',expires=0)
+        return response
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
