@@ -1,26 +1,17 @@
 <html>
 <head>
 <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <title>MMU Shop</title>
 </head>
 <body>
-    <nav class="nav_one">
-        <ul>
-            <ul>
-                <li style="position: fixed;top:opx;left: 1400px;"><a href="#">Users</a></li>
-                <li style="position: fixed;top:opx; left: 1300px;"><a>Bag</a></li>
-                <li style="position: fixed;top:opx;left: 1200px;"><a>Help</a></li>
-            </ul>
-        </ul>
 
-
-    </nav>
 
     {% if mmustudent %}
     <nav>
         <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
             <ul>
-                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{url_for('mmustudent' ,name=name,mmustudent=mmustudent)}}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 350px;"><a href ="{{url_for('mmustudent' ,name=name,mmustudent=mmustudent)}}">Home</a></li>
                 <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop',name=name,mmustudent=mmustudent) }}">2-hand shop</a></li>
                 <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
                 <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
@@ -32,7 +23,7 @@
     <nav>
         <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
             <ul>
-                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{url_for('notmmustudent', name=name)}}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 350px;"><a href ="{{url_for('notmmustudent', name=name)}}">Home</a></li>
                 <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('notsecondhandshop',name=name) }}">2-hand shop</a></li>
                 <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
                 <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
@@ -54,9 +45,28 @@
     <p></p>
 
     {% if mmustudent %}
-      <p style="position: absolute; top: 270px; left: 1200px;z-index:-1;">MMU Student!!</p>
-      <p style="position: absolute; top: 290px; left: 1180px;">You will get discount!!</p>
+    <div class="user">
+        <span class="material-symbols-outlined">
+            account_circle
+         </span>
+        <p>{{name}}</p>
+        <div class="dropdown-content"><a href="{{url_for('login')}}">Log out</a></div>
+        
+    </div>
+      <p style="position: absolute; top: 250px; left: 1120px;font-size: 150%;">MMU STUDENT: 10% DISCOUNT</p>
+    {% else %}
+
+    <div class="user">
+        <span class="material-symbols-outlined">
+            account_circle
+         </span>
+        <p>{{name}}</p>
+        <div class="dropdown-content"><a href="{{url_for('login')}}">Log out</a></div>
+        
+    </div>
+
     {% endif %}
+
 
 <h3 style="position: absolute; top: 1320px; left: 50%; transform: translateX(-50%); font-size: 150%; color: rgba(49, 49, 49, 0.555);">Take a look at what's new right now</h3>
 <h2 style= "position: absolute; top:1350;left: 50%; transform: translateX(-50%);font-size: 230%;">Shop the latest trends in fashion and accessories</h2>

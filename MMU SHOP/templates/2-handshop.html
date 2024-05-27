@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
+
+    {% if mmustudent %}
     <nav>
         <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
             <ul>
@@ -17,6 +19,25 @@
             </ul>
 
     </nav>
+    {% else %}
+
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('notmmustudent',name=name) }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('notsecondhandshop',name=name)}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ='#'>MMU Stuff</a></li>
+            </ul>
+
+    </nav>
+
+    {% endif %}
+
+
+
 <h1 style="position: absolute; top: 180px; left: 10px;font-size: 325%;">2-handshop</h1>
 <form>
     <div class="search" style="position: absolute; top: 220px; right: 100px;">
