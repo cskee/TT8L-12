@@ -2,222 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MMU SHOP</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='2-handshop.css') }}">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <style>
+        .product {
+            display: none;
+        }
+        .types_container .type:hover ~ .product-container1 .product {
+            display: none;
+        }
+        .types_container .type:hover ~ .product-container1 .product[data-type="shoes"],
+        .types_container .type:hover ~ .product-container1 .product[data-type="basketball"],
+        .types_container .type:hover ~ .product-container1 .product[data-type="necklace"],
+        .types_container .type:hover ~ .product-container1 .product[data-type="gym"],
+        .types_container .type:hover ~ .product-container1 .product[data-type="shaver"],
+        .types_container .type:hover ~ .product-container1 .product[data-type="protein"] {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <div class="header">
-        <div class="row">
-        <div class="small-container">
-            <h2 class="title">Featured Products</h2>  
-            <div class="row">
-                <div class="products">
-                    <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\shirt 1.png" alt="Shirt 1">
-                <div class="border-box">
-                    <div class="proname">MMU T-shirt</div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <div class="box">
-                        <div class="price">RM50</div>
-                        <button class="button">Add to Cart</button>
-                    </div>
-                </div>
-                </div>
-                <div class="products">
-                    <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\shirt 2.png" alt="Shirt 1">
-                <div class="border-box">
-                    <div class="proname"> MMU T-Shirt</div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="box">
-                        <div class="price">RM 50</div>
-                        <button class="button">Add to Cart</button>
-                    </div>
-                </div>
-                </div>
-                <div class="products">
-                    <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\shirt 3.png" alt="Shirt 1">
-                <div class="border-box">
-                    <div class="proname"> MMU T-Shirt</div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="box">
-                        <div class="price">RM 50</div>
-                        <button class="button"> Add to Cart</button>
-                    </div>
-                </div>
-                </div>
-                <div class="products">
-                    <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\shirt 4.png" alt="Shirt 1">
-                <div class="border-box">
-                    <div class="proname"> MMU T-Shirt</div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half"></i>
-                    </div>
-                    <div class="box">
-                        <div class="price">RM 50 </div>
-                        <button class="button">Add to Cart</button>
-                    </div>
-                </div>
-                </div>    
-            </div>
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+        <ul>
+            <li style="position: fixed; top:10px; left: 350px;"><a href="{{ url_for('mmustudent',name='your name here') }}">Home</a></li>
+            <li style="position: fixed; top: 10px; left: 450px;"><a href="{{ url_for('secondhandshop')}}">2-hand shop</a></li>
+            <li style="position: fixed; top: 10px; left: 620px;"><a href="#">Electronic devices</a></li>
+            <li style="position: fixed; top: 10px; left: 900px;"><a href="file:///C:/Users/user/projects/TT8L-12/my%20coding/mens%20page.html">Men</a></li>
+            <li style="position: fixed; top: 10px; left: 1100px;"><a href="#">Women</a></li>
+            <li style="position: fixed; top: 10px; left: 1250px;"><a href="file:///C:/Users/user/projects/TT8L-12/my%20coding/mmu%20stuff.html">MMU Stuff</a></li>
+        </ul>
+    </nav>
+    <h1 style="position: absolute; top: 180px; left: 10px;font-size: 325%;">MENS</h1>
+    <form>
+        <div class="search" style="position: absolute; top: 220px; right: 100px;">
+            <span class="search-icon material-symbols-outlined">search</span>
+            <input class="search-input" type="search" placeholder="Search..">
         </div>
-        </div>
-    </div>
-    <div class="header1">
-    <div class="small-container">
-        <h2 class="title">Shoes</h2>
-        <div class="row">
-            <div class="products">
-                <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\shoe 1.jpg" alt="shoes 1">
-                <div class="proname">MMU shoes</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="box">
-                    <div class="price">RM 50 </div>
-                    <button class="button">Add to Cart</button>
-                </div>
-            </div>
-            <div class="products">
-                <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\shoe 2.jpg" alt="shoes 1">
-                <div class="proname">MMU shoes</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="box">
-                    <div class="price">RM 50 </div>
-                    <button class="button">Add to Cart</button>
-                </div>
-            </div>
-            <div class="products">
-                <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\shoe 3.jpg" alt="shoes 1">
-                <div class="proname">MMU shoes</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="box">
-                    <div class="price">RM 50 </div>
-                    <button class="button">Add to Cart</button>
-                </div>
-            </div>
-            <div class="products">
-                <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\shoe 4.jpg" alt="shoes 1">
-                <div class="proname">MMU shoes</div>
-                <div class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <div class="box">
-                    <div class="price">RM 50 </div>
-                    <button class="button">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="header2">
-        <div class="small-container">
-            <h2 class="title">Cap</h2>
-            <div class="row">
-                <div class="products">
-                    <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\cap 2.jpg" alt="cap 1">
-                    <div class="proname">MMU cap</div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="box">
-                        <div class="price">RM 50 </div>
-                        <button class="button">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="products">
-                    <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\cap 3.jpg" alt="cap 2">
-                    <div class="proname">MMU cap</div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="box">
-                        <div class="price">RM 50 </div>
-                        <button class="button">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="products">
-                    <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\cap 4.jpg" alt="cap 2">
-                    <div class="proname">MMU cap</div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="box">
-                        <div class="price">RM 50 </div>
-                        <button class="button">Add to Cart</button>
-                    </div>
-                </div>
-                <div class="products">
-                    <img src="c:\Users\user\projects\TT8L-12\my coding\mmu stuff images\cap 5.jpg" alt="cap 2">
-                    <div class="proname">MMU cap</div>
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="box">
-                        <div class="price">RM 50 </div>
-                        <button class="button">Add to Cart</button>
-                    </div>
-                </div>            
-            </div>        
-        </div>            
-    </div>
 
+        <div class="types_container">
+            <div class="type" data-type="shoes">
+                <h2>Shoes</h2>
+            </div>
+            <div class="type" data-type="basketball">
+                <h2>Basketball</h2>
+            </div>
+            <div class="type" data-type="necklace">
+                <h2>Necklace</h2>
+            </div>
+            <div class="type" data-type="gym">
+                <h2>Gym Equipments</h2>
+            </div>
+            <div class="type" data-type="shaver">
+                <h2>Shaver</h2>
+            </div>
+            <div class="type" data-type="protein">
+                <h2>Protein Powder</h2>
+            </div>
+        </div>
+
+        <div class="product-container1">
+            <div class="product" data-type="shoes">
+                <img src="mensimage/runshoe1.png" alt="Running shoe">
+                <h2 class="product-title">Running shoe</h2>
+                <p class="product-price">
+                    <span class="original-price">$129.99</span>
+                    <span class="discounted-price">$99.99</span>
+                    <span class="discount">10% off</span>
+                </p>
+                <p class="product-description">T-shirt</p>
+            </div>
+            <div class="product" data-type="shoes">
+                <img src="mensimage/runshoe2.png" alt="Running shoe">
+                <h2 class="product-title">Running shoe</h2>
+                <p class="product-price">
+                    <span class="original-price">$129.99</span>
+                    <span class="discounted-price">$99.99</span>
+                    <span class="discount">10% off</span>
+                </p>
+                <p class="product-description">MMU STUFF</p>
+            </div>
+            <!-- Repeat for other products with appropriate data-type attributes -->
+        </div>
+
+        <div class="conclusion">
+            <h1>MMU STUFF</h1>
+            <h3>Checkout our other products</h3>
+            <div class="navimg">
+                <div class="textimg">
+                    <img src="{{ url_for('static', filename='2-handimg.png') }}">
+                    <div class="text-over-image">2-handshop</div>
+                </div>
+            </div>
+        </div>
+    </form>
 </body>
 </html>

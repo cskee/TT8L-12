@@ -1,0 +1,235 @@
+<html>
+<head>
+<title>Mens</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='2-handshop.css') }}">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('mmustudent',name='your name here') }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop')}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ='file:///C:/Users/user/projects/TT8L-12/my%20coding/mens%20page.html'>Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ='file:///C:/Users/user/projects/TT8L-12/my%20coding/mmu%20stuff.html'>MMU Stuff</a></li>
+            </ul>
+
+    </nav>
+<h1 style="position: absolute; top: 180px; left: 10px;font-size: 325%;">MENS</h1>
+<form>
+    <div class="search" style="position: absolute; top: 220px; right: 100px;">
+        <span class="search-icon material-symbols-outlined">search</span>
+        <input class="search-input" type="search" placeholder="Search.." >
+    </div>
+
+    <div class="types_container">
+        <div class="type" data-type="shoes">
+            <h2>shoes</h2>
+        </div>
+        <div class="type">
+            <h2>basketball</h2>
+        </div>
+        <div class="type">
+            <h2>necklace</h2>
+        </div>
+        <div class="type">
+            <h2>Gym equipments</h2>
+        </div>
+        <div class="type">
+            <h2>Shaver</h2>
+        </div>
+        <div class="type">
+            <h2>Protein powder</h2>
+        </div>
+    </div>
+
+    <div class="product-container1">
+        
+
+        <div class="product" data-type="shoes">
+            <img src="mensimage/runshoe1.png">
+            <h2 class="product-title">Running shoe</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">T-shirt</p>
+        </div>
+
+        <div class="product" data-type="shoes">
+            <img src="mensimage/runshoe2.png" alt="product-image">
+            <h2 class="product-title">Running shoe</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product" data-type="shoes">
+            <img src="mensimage/gymshoe1.png" alt="product-image">
+            <h2 class="product-title">Workout shoe</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product" data-type="shoes">
+            <img src="mensimage/gymshoe2.png" alt="product-image">
+            <h2 class="product-title">Workout shoe</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/basketball1.jpg" alt="product-image">
+            <h2 class="product-title">Molten Basketball</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$89.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/basketball2.jpg" alt="product-image">
+            <h2 class="product-title">Wilson Basketball</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$119.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/watch1.jpg" alt="product-image">
+            <h2 class="product-title">Poshi Watch</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$21.50</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/watch2.jpg" alt="product-image">
+            <h2 class="product-title">Ganeva Watch</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$25.90</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/watch3.jpg" alt="product-image">
+            <h2 class="product-title">G-Shock Watch</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$80.00</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/shaver.jpg" alt="product-image">
+            <h2 class="product-title">Shaver</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$35.90</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/neck.jpg" alt="product-image">
+            <h2 class="product-title">Silver chain</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$25.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/neck2.jpg" alt="product-image">
+            <h2 class="product-title">Titanium Steel Necklace</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$27.49</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/dumbell1.jpg" alt="product-image">
+            <h2 class="product-title">Dumbell (5kgx2)</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$36.80</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/abs roller.jpg" alt="product-image">
+            <h2 class="product-title">Abs roller</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$17.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="mensimage/protein.jpg" alt="product-image">
+            <h2 class="product-title">Optimum Nutrition Gold Standard Whey (2lbs)</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$90.00</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        </div>
+    </div>
+
+    <div class="conclusion">
+        <h1>MMU STUFF</h1>
+        <h3>Checkout our other products</h3>
+
+        <div class="navimg">
+            <div class="textimg">
+                <img src="{{url_for('static',filename='2-handimg.png')}}">
+                <div class="text-over-image">2-handshop</div>
+            </div>
+
+        </div>
+
+    </div>
+</form>
+</body>
+</html>
