@@ -216,16 +216,3 @@ nav ul li a:hover{
         font-size: 2rem;
     }
 }
-.product {
-    display: none;
-}
-
-/* Show products of the hovered type */
-.types_container .type[data-type="shoes"]:hover ~ .product-container1 .product[data-type="shoes"],
-.types_container .type[data-type="basketball"]:hover ~ .product-container1 .product[data-type="basketball"],
-.types_container .type[data-type="necklace"]:hover ~ .product-container1 .product[data-type="necklace"],
-.types_container .type[data-type="gym"]:hover ~ .product-container1 .product[data-type="gym"],
-.types_container .type[data-type="shaver"]:hover ~ .product-container1 .product[data-type="shaver"],
-.types_container .type[data-type="protein"]:hover ~ .product-container1 .product[data-type="protein"] {
-    display: block;
-}
