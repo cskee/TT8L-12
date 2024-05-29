@@ -1,0 +1,24 @@
+<html>
+<head>
+<link rel="stylesheet" href="{{url_for('static', filename='sellerform.css')}}">
+</head>
+<body>
+    <div class="form-container">
+        <form action = "http://localhost:5000/uploadproduct" method = "post">
+     
+    
+            <h1>Upload your product</h1>
+  
+            <div class="input-group">
+                <p>Product name:</p>
+               <input type="email" name="product_name" placeholder="Product name.." 
+               required>
+               
+            </div>
+            <div class="input-group">
+                <p>Price of the product:</p>
+               <input type="password" name="price" placeholder="Price.." required>
+            </div>
+    </div>
+</body>
+</html>

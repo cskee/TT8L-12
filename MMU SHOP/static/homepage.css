@@ -22,7 +22,8 @@
 }
 
 .dropdown-content {
-    display: none; 
+    display: flex; 
+    flex-wrap: wrap;
     position: absolute;
     top: 100%; 
     left: 0;

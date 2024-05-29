@@ -21,6 +21,9 @@ def secondhandshop(name):
 def notsecondhandshop(name):
     return render_template("2-handshop.html" ,name=name)
 
+@app.route('/uploadproduct/<name>')
+def uploadproduct(name): 
+    return render_template("sellerform.html",name=name)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
