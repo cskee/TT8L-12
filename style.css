@@ -203,6 +203,12 @@ nav ul li a:hover{
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
+.star{
+    color: rgb(255, 200, 0);
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
 .sec .products .col-2 h1{
     font-size: 45px;
 }
