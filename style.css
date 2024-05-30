@@ -143,6 +143,9 @@ nav ul li a:hover{
     text-decoration: line-through;
     margin-right: 10px; 
 }
+.original-price1 {
+    color: #007bff; 
+}
 
 .discounted-price {
     color: #007bff; 
