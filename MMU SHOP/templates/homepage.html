@@ -13,10 +13,10 @@
             <ul>
                 <li style="position: fixed; top: 10px; left: 350px;"><a href ="{{url_for('mmustudent' ,name=name,mmustudent=mmustudent)}}">Home</a></li>
                 <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop',name=name,mmustudent=mmustudent) }}">2-hand shop</a></li>
-                <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
-                <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
-                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
-                <li style="position: fixed; top: 10px; left: 1250px;"><a href ='#'>MMU Stuff</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ="#">Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ="{{url_for('menspage',name=name)}}">Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ="#">Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ="{{url_for('mmustuff',name=name)}}">MMU Stuff</a></li>
             </ul>
     </nav>
     {% else %}
@@ -25,10 +25,10 @@
             <ul>
                 <li style="position: fixed; top: 10px; left: 350px;"><a href ="{{url_for('notmmustudent', name=name)}}">Home</a></li>
                 <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('notsecondhandshop',name=name) }}">2-hand shop</a></li>
-                <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
-                <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
-                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
-                <li style="position: fixed; top: 10px; left: 1250px;"><a href ='#'>MMU Stuff</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ="#">Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ="{{url_for('notmenspage',name=name)}}">Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ="#">Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ="{{url_for('notmmustuff',name=name)}}">MMU Stuff</a></li>
             </ul>
     </nav>
     {% endif %}
