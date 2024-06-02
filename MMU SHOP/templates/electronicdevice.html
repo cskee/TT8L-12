@@ -1,0 +1,1063 @@
+<html>
+<head>
+<title>Electronic device</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='2-handshop.css') }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+    {% if mmustudent %}
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('mmustudent',name=name) }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop',name=name)}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ="{{url_for('electronicdevice',name=name)}}">Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ="{{url_for('menspage',name=name)}}">Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ="{{url_for('womenpage',name=name)}}">Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ="{{url_for('mmustuff',name=name)}}">MMU Stuff</a></li>
+            </ul>
+
+    </nav>
+    {% else %}
+
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('notmmustudent',name=name) }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('notsecondhandshop',name=name)}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ="{{url_for('notelectronicdevice',name=name)}}">Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ="{{url_for('notmenspage',name=name)}}">Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ="{{url_for('notwomenpage',name=name)}}">Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ="{{url_for('notmmustuff',name=name)}}">MMU Stuff</a></li>
+            </ul>
+
+    </nav>
+
+    {% endif %}
+
+
+
+<h1 style="position: absolute; top: 180px; left: 10px;font-size: 325%;">Electronic device</h1>
+<form>
+    <div class="search" style="position: absolute; top: 220px; right: 100px;">
+        <span class="search-icon material-symbols-outlined">search</span>
+        <input class="search-input" type="search" placeholder="Search.." >
+    </div>
+
+    <div class="types_container">
+        <div class="type">
+            <h2>All</h2>
+        </div>
+        <div class="type">
+            <h2>Daily</h2>
+        </div>
+        <div class="type">
+            <h2>Computer Devices</h2>
+        </div>
+        <div class="type">
+            <h2>Stationary</h2>
+        </div>
+        <div class="type">
+            <h2>Tablet & Phone</h2>
+        </div>
+        <div class="type">
+            <h2>Other</h2>
+        </div>
+    </div>
+
+
+    <div class="product-container1">
+        {% if mmustudent %}
+        <div class="product">
+            <img src="{{url_for('static',filename='mini fans.jpg')}}">
+            <h2 class="product-title">Mini Fans</h2>
+            <p class="product-price">
+                <span class="original-price">RM5.50</span>
+                <span class="discounted-price">RM4.50</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Daily</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='Multiple extension.jpg')}}" alt="product-image">
+            <h2 class="product-title">Multiple Extension</h2>
+            <p class="product-price">
+                <span class="original-price">RM21.40</span>
+                <span class="discounted-price">RM19.30</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Daily</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='Multiple plug.jpg')}}" alt="product-image">
+            <h2 class="product-title">Multiple plug</h2>
+            <p class="product-price">
+                <span class="original-price">RM2.60</span>
+                <span class="discounted-price">RM2</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Daily</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='powerbank.jpg')}}" alt="product-image">
+            <h2 class="product-title">Powerbank</h2>
+            <p class="product-price">
+                <span class="original-price">RM95</span>
+                <span class="discounted-price">RM85</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Daily</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='Portable Printer.jpg')}}" alt="product-image">
+            <h2 class="product-title">Portable Printer</h2>
+            <p class="product-price">
+                <span class="original-price">RM850</span>
+                <span class="discounted-price">RM765</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Stationary</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='static/type c to hdmi.jpg')}}" alt="product-image">
+            <h2 class="product-title">HDMI Cable to Type-C Cable</h2>
+            <p class="product-price">
+                <span class="original-price">RM57</span>
+                <span class="discounted-price">RM51</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Devices</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='headphone.jpg')}}" alt="product-image">
+            <h2 class="product-title">Gaming Headphone</h2>
+            <p class="product-price">
+                <span class="original-price">RM</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Devices</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='camera.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Other</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='earphone.jpg')}}" alt="product-image">
+            <h2 class="product-title">Wired Earphone</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Daily</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='wireless earphone.png')}}" alt="product-image">
+            <h2 class="product-title">Wireless Earbuds</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Daily</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hairdryer.png')}}" alt="product-image">
+            <h2 class="product-title">Hairdryer</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='iron.png')}}" alt="product-image">
+            <h2 class="product-title">Iron</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Daily</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='keyboard 1.jpg')}}" alt="product-image">
+            <h2 class="product-title">Keyboard</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Devices</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='keyboard.png')}}" alt="product-image">
+            <h2 class="product-title">Keyboard</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Devices</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='mouse 1.jpg')}}" alt="product-image">
+            <h2 class="product-title">Wireless Mouse</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Devices</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='mouse 2.png')}}" alt="product-image">
+            <h2 class="product-title">Wired Mouse</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Device</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='headphone.jpg')}}" alt="product-image">
+            <h2 class="product-title">Gaming Headphone</h2>
+            <p class="product-price">
+                <span class="original-price">RM</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Devices</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='camera.png')}}" alt="product-image">
+            <h2 class="product-title">Hat</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Other</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='earphone.jpg')}}" alt="product-image">
+            <h2 class="product-title">Wired Earphone</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Daily</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='wireless earphone.png')}}" alt="product-image">
+            <h2 class="product-title">Wireless Earbuds</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Daily</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='hairdryer.png')}}" alt="product-image">
+            <h2 class="product-title">Hairdryer</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='iron.png')}}" alt="product-image">
+            <h2 class="product-title">Iron</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Daily</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='keyboard 1.jpg')}}" alt="product-image">
+            <h2 class="product-title">Keyboard</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Devices</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='keyboard.png')}}" alt="product-image">
+            <h2 class="product-title">Keyboard</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Devices</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='mouse 1.jpg')}}" alt="product-image">
+            <h2 class="product-title">Wireless Mouse</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Devices</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='mouse 2.png')}}" alt="product-image">
+            <h2 class="product-title">Wired Mouse</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Device</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='Portable Speaker with FM radio.png')}}" alt="product-image">
+            <h2 class="product-title">Portable Speaker with RM radio</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Other</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='Projector.jpg')}}" alt="product-image">
+            <h2 class="product-title">Projector screen</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Other</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='speaker.jpg')}}" alt="product-image">
+            <h2 class="product-title">Computer Speaker</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Computer Device</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='table lamp.png')}}" alt="product-image">
+            <h2 class="product-title">Table Lamp</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Stationary</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='scientific calculator.png')}}" alt="product-image">
+            <h2 class="product-title">Scientific Calculator fx-570EX-BU</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Stationary</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='Tab P12 pro lenovo')}}" alt="product-image">
+            <h2 class="product-title">Tab P12 Pro Lenovo</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Tablet & Phone</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='Samsung Galaxy Tab S6.jpg')}}" alt="product-image">
+            <h2 class="product-title">Samsung Galaxy Tab S6</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Tablet & Phone</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='drone.png')}}" alt="product-image">
+            <h2 class="product-title">Drone</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">$99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">Other</p>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+        </div>
+
+    
+    </div>
+
+    {% else %}
+
+    <div class="product">
+        <img src="{{url_for('static',filename='mini fans.jpg')}}">
+        <h2 class="product-title">Mini Fans</h2>
+        <p class="product-price">
+            <span class="original-price1">RM5.50</span>
+        </p>
+        <p class="product-description">Daily</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='Multiple extension.jpg')}}" alt="product-image">
+        <h2 class="product-title">Multiple Extension</h2>
+        <p class="product-price">
+            <span class="original-price1">RM21.40</span>
+        </p>
+        <p class="product-description">Daily</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='Multiple plug.jpg')}}" alt="product-image">
+        <h2 class="product-title">Multiple plug</h2>
+        <p class="product-price">
+            <span class="original-price1">RM2.60</span>
+        </p>
+        <p class="product-description">Daily</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='powerbank.jpg')}}" alt="product-image">
+        <h2 class="product-title">Powerbank</h2>
+        <p class="product-price">
+            <span class="original-price1">RM95</span>
+        </p>
+        <p class="product-description">Daily</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='Portable Printer.jpg')}}" alt="product-image">
+        <h2 class="product-title">Portable Printer</h2>
+        <p class="product-price">
+            <span class="original-price1">RM850</span>
+        </p>
+        <p class="product-description">Stationary</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='static/type c to hdmi.jpg')}}" alt="product-image">
+        <h2 class="product-title">HDMI Cable to Type-C Cable</h2>
+        <p class="product-price">
+            <span class="original-price1">RM57</span>
+        </p>
+        <p class="product-description">Computer Devices</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='headphone.jpg')}}" alt="product-image">
+        <h2 class="product-title">Gaming Headphone</h2>
+        <p class="product-price">
+            <span class="original-price1">RM??</span>
+        </p>
+        <p class="product-description">Computer Devices</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='camera.png')}}" alt="product-image">
+        <h2 class="product-title">Hat</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Other</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='earphone.jpg')}}" alt="product-image">
+        <h2 class="product-title">Wired Earphone</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Daily</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='wireless earphone.png')}}" alt="product-image">
+        <h2 class="product-title">Wireless Earbuds</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Daily</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='hairdryer.png')}}" alt="product-image">
+        <h2 class="product-title">Hairdryer</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">MMU STUFF</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='iron.png')}}" alt="product-image">
+        <h2 class="product-title">Iron</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Daily</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='keyboard 1.jpg')}}" alt="product-image">
+        <h2 class="product-title">Keyboard</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Computer Devices</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='keyboard.png')}}" alt="product-image">
+        <h2 class="product-title">Keyboard</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Computer Devices</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='mouse 1.jpg')}}" alt="product-image">
+        <h2 class="product-title">Wireless Mouse</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Computer Devices</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='mouse 2.png')}}" alt="product-image">
+        <h2 class="product-title">Wired Mouse</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Computer Device</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='Portable Speaker with FM radio.png')}}" alt="product-image">
+        <h2 class="product-title">Portable Speaker with RM radio</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Other</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='Projector.jpg')}}" alt="product-image">
+        <h2 class="product-title">Projector screen</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Other</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='speaker.jpg')}}" alt="product-image">
+        <h2 class="product-title">Computer Speaker</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Computer Device</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='table lamp.png')}}" alt="product-image">
+        <h2 class="product-title">Table Lamp</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Stationary</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='scientific calculator.png')}}" alt="product-image">
+        <h2 class="product-title">Scientific Calculator fx-570EX-BU</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Stationary</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='Tab P12 pro lenovo')}}" alt="product-image">
+        <h2 class="product-title">Tab P12 Pro Lenovo</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Tablet & Phone</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='Samsung Galaxy Tab S6.jpg')}}" alt="product-image">
+        <h2 class="product-title">Samsung Galaxy Tab S6</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Tablet & Phone</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+
+    <div class="product">
+        <img src="{{url_for('static',filename='drone.png')}}" alt="product-image">
+        <h2 class="product-title">Drone</h2>
+        <p class="product-price">
+            <span class="original-price1">RM</span>
+        </p>
+        <p class="product-description">Other</p>
+        <div class ="star">
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+            <i class=" fas fa-star"></i>
+         </div>
+    </div>
+    
+    </div>
+</div>
+        
+
+    
+    {% endif %}
+
+
+    <div class="conclusion">
+        <h1>Electronic device</h1>
+        <h3>Checkout our other products</h3>
+        
+        <div class="navimg">
+            <div class="textimg">
+                <img src="{{url_for('static',filename='electronicdevice.png')}}">
+                <div class="text-over-image">Electronic device</div>
+            </div>
+            
+        </div>
+        
+    </div>
+</form>
+</body>
+</html>

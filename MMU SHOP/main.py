@@ -29,6 +29,22 @@ def menspage(name):
 def notmenspage(name):
     return render_template("menspage.html",name=name)
 
+@app.route("/womenpage.html/<name>")
+def womenpage(name):
+    return render_template("womenpage.html",name=name,mmustudent=mmustudent)
+
+@app.route("/notwomenpage.html/<name>")
+def notwomenpage(name):
+    return render_template("womenpage.html",name=name)
+
+@app.route("/electronicdevice/<name>")
+def electronicdevice(name):
+    return render_template("electronicdevice.html",name=name,mmustudent=mmustudent)
+
+@app.route("/notelectronicdevice/<name>")
+def notelectronicdevice(name):
+    return render_template("electronicdevice.html",name=name)
+
 @app.route("/mmustuff/<name>")
 def mmustuff(name):
     return render_template("mmustuff.html",name=name,mmustudent=mmustudent)
@@ -62,6 +78,8 @@ def login():
     else:
         return render_template("loginpage.html")
     
+    
+@app.route('/logout')    
 def logout():
     response = make_response(redirect(url_for('login')))
     response.set_cookie('mmustudent','',expires=0)

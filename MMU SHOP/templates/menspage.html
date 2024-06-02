@@ -12,9 +12,9 @@
             <ul>
                 <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('mmustudent',name=name) }}">Home</a></li>
                 <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop',name=name)}}">2-hand shop</a></li>
-                <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ="{{url_for('electronicdevice',name=name)}}">Electronic devices</a></li>
                 <li style="position: fixed; top: 10px; left: 900px;"><a href ="{{url_for('menspage',name=name)}}">Men</a></li>
-                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ="{{url_for('womenpage',name=name)}}">Women</a></li>
                 <li style="position: fixed; top: 10px; left: 1250px;"><a href ="{{url_for('mmustuff',name=name)}}">MMU Stuff</a></li>
             </ul>
     </nav>
@@ -26,9 +26,9 @@
             <ul>
                 <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('notmmustudent',name=name) }}">Home</a></li>
                 <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('notsecondhandshop',name=name)}}">2-hand shop</a></li>
-                <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ="{{url_for('notelectronicdevice',name=name)}}">Electronic devices</a></li>
                 <li style="position: fixed; top: 10px; left: 900px;"><a href ="{{url_for('notmenspage',name=name)}}">Men</a></li>
-                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ="{{url_for('notwomenpage',name=name)}}">Women</a></li>
                 <li style="position: fixed; top: 10px; left: 1250px;"><a href ="{{url_for('notmmustuff',name=name)}}">MMU Stuff</a></li>
             </ul>
     </nav>
