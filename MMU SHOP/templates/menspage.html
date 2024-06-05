@@ -1,0 +1,397 @@
+<html>
+<head>
+<title>Mens</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='2-handshop.css') }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+    {% if mmustudent %}
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('mmustudent',name=name) }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop',name=name)}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ="{{url_for('electronicdevice',name=name)}}">Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ="{{url_for('menspage',name=name)}}">Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ="{{url_for('womenpage',name=name)}}">Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ="{{url_for('mmustuff',name=name)}}">MMU Stuff</a></li>
+            </ul>
+    </nav>
+
+    {% else %}
+
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('notmmustudent',name=name) }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('notsecondhandshop',name=name)}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ="{{url_for('notelectronicdevice',name=name)}}">Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ="{{url_for('notmenspage',name=name)}}">Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ="{{url_for('notwomenpage',name=name)}}">Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ="{{url_for('notmmustuff',name=name)}}">MMU Stuff</a></li>
+            </ul>
+    </nav>
+
+    {% endif %}
+
+
+
+
+    
+<h1 style="position: absolute; top: 180px; left: 10px;font-size: 325%;">MENS</h1>
+<form>
+    <div class="search" style="position: absolute; top: 220px; right: 100px;">
+        <span class="search-icon material-symbols-outlined">search</span>
+        <input class="search-input" type="search" placeholder="Search.." >
+    </div>
+
+    <div class="types_container">
+        <div class="type" data-type="shoes">
+            <h2>shoes</h2>
+        </div>
+        <div class="type">
+            <h2>basketball</h2>
+        </div>
+        <div class="type">
+            <h2>necklace</h2>
+        </div>
+        <div class="type">
+            <h2>Gym equipments</h2>
+        </div>
+        <div class="type">
+            <h2>Shaver</h2>
+        </div>
+        <div class="type">
+            <h2>Protein powder</h2>
+        </div>
+    </div>
+
+    <div class="product-container1">
+        {% if mmustudent %}
+
+        <div class="product" data-type="shoes">
+            <img src="{{url_for('static',filename='runshoe1.png')}}">
+            <h2 class="product-title">Running shoe</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">T-shirt</p>
+        </div>
+
+        <div class="product" data-type="shoes">
+            <img src="{{url_for('static',filename='runshoe2.png')}}"alt="product-image">
+            <h2 class="product-title">Running shoe</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product" data-type="shoes">
+            <img src="{{url_for('static',filename='gymshoe1.png')}}" alt="product-image">
+            <h2 class="product-title">Workout shoe</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product" data-type="shoes">
+            <img src="{{url_for('static',filename='gymshoe2.png')}}"alt="product-image">
+            <h2 class="product-title">Workout shoe</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM99.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='basketball1.jpg')}}" alt="product-image">
+            <h2 class="product-title">Molten Basketball</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM89.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='basketball2.jpg')}}" alt="product-image">
+            <h2 class="product-title">Wilson Basketball</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM119.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='watch1.jpg')}}" alt="product-image">
+            <h2 class="product-title">Poshi Watch</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM21.50</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='watch2.jpg')}}" alt="product-image">
+            <h2 class="product-title">Ganeva Watch</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM25.90</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='watch3.jpg')}}" alt="product-image">
+            <h2 class="product-title">G-Shock Watch</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM80.00</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='shaver.jpg')}}" alt="product-image">
+            <h2 class="product-title">Shaver</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM35.90</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='neck.jpg')}}" alt="product-image">
+            <h2 class="product-title">Silver chain</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM25.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='neck2.jpg')}}" alt="product-image">
+            <h2 class="product-title">Titanium Steel Necklace</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM27.49</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='dumbell1.jpg')}}" alt="product-image">
+            <h2 class="product-title">Dumbell (5kgx2)</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM36.80</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='abs roller.jpg')}}"alt="product-image">
+            <h2 class="product-title">Abs roller</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM17.99</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="{{url_for('static',filename='protein.jpg')}}" alt="product-image">
+            <h2 class="product-title">Optimum Nutrition Gold Standard Whey (2lbs)</h2>
+            <p class="product-price">
+                <span class="original-price">RM129.99</span>
+                <span class="discounted-price">RM90.00</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        </div>
+    </div>
+
+    {% else %}
+
+    <div class="product" data-type="shoes">
+        <img src="{{url_for('static',filename='runshoe1.png')}}">
+        <h2 class="product-title">Running shoe</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+        </p>
+        <p class="product-description">T-shirt</p>
+    </div>
+    <div class="product" data-type="shoes">
+        <img src="{{url_for('static',filename='runshoe2.png')}}" alt="product-image">
+        <h2 class="product-title">Running shoe</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product" data-type="shoes">
+        <img src="{{url_for('static',filename='gymshoe1.png')}}" alt="product-image">
+        <h2 class="product-title">Workout shoe</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product" data-type="shoes">
+        <img src="{{url_for('static',filename='gymshoe2.png')}}" alt="product-image">
+        <h2 class="product-title">Workout shoe</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='basketball1.jpg')}}" alt="product-image">
+        <h2 class="product-title">Molten Basketball</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='basketball2.jpg')}}" alt="product-image">
+        <h2 class="product-title">Wilson Basketball</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='watch1.jpg')}}" alt="product-image">
+        <h2 class="product-title">Poshi Watch</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='watch2.jpg')}}" alt="product-image">
+        <h2 class="product-title">Ganeva Watch</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='watch3.jpg')}}" alt="product-image">
+        <h2 class="product-title">G-Shock Watch</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='shaver.jpg')}}" alt="product-image">
+        <h2 class="product-title">Shaver</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='neck.jpg')}}" alt="product-image">
+        <h2 class="product-title">Silver chain</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='neck2.jpg')}}" alt="product-image">
+        <h2 class="product-title">Titanium Steel Necklace</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='dumbell1.jpg')}}" alt="product-image">
+        <h2 class="product-title">Dumbell (5kgx2)</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='abs roller.jpg')}}" alt="product-image">
+        <h2 class="product-title">Abs roller</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    <div class="product">
+        <img src="{{url_for('static',filename='protein.jpg')}}" alt="product-image">
+        <h2 class="product-title">Optimum Nutrition Gold Standard Whey (2lbs)</h2>
+        <p class="product-price">
+            <span class="original-price1">RM129.99</span>
+            
+        </p>
+        <p class="product-description">MMU STUFF</p>
+    </div>
+    </div>
+
+    {% endif %}
+
+
+
+    <div class="conclusion">
+        <h1>MMU STUFF</h1>
+        <h3>Checkout our other products</h3>
+
+        <div class="navimg">
+            <div class="textimg">
+                <img src="{{url_for('static',filename='menimg.png')}}">
+                <div class="text-over-image">Men</div>
+            </div>
+
+        </div>
+
+    </div>
+</form>
+</body>
+</html>

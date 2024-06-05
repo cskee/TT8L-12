@@ -21,6 +21,45 @@ def secondhandshop(name):
 def notsecondhandshop(name):
     return render_template("2-handshop.html" ,name=name)
 
+@app.route("/menspage.html/<name>")
+def menspage(name):
+    return render_template("menspage.html",name=name,mmustudent=mmustudent)
+
+@app.route("/notmenspage,html/<name>")
+def notmenspage(name):
+    return render_template("menspage.html",name=name)
+
+@app.route("/womenpage.html/<name>")
+def womenpage(name):
+    return render_template("womenpage.html",name=name,mmustudent=mmustudent)
+
+@app.route("/notwomenpage.html/<name>")
+def notwomenpage(name):
+    return render_template("womenpage.html",name=name)
+
+@app.route("/electronicdevice/<name>")
+def electronicdevice(name):
+    return render_template("electronicdevice.html",name=name,mmustudent=mmustudent)
+
+@app.route("/notelectronicdevice/<name>")
+def notelectronicdevice(name):
+    return render_template("electronicdevice.html",name=name)
+
+@app.route("/mmustuff/<name>")
+def mmustuff(name):
+    return render_template("mmustuff.html",name=name,mmustudent=mmustudent)
+
+@app.route("/notmmustuff/<name>")
+def notmmustuff(name):
+    return render_template("mmustuff.html",name=name)
+
+
+
+
+
+@app.route('/uploadproduct/<name>')
+def uploadproduct(name): 
+    return render_template("sellerform.html",name=name)
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
@@ -39,10 +78,12 @@ def login():
     else:
         return render_template("loginpage.html")
     
-    def logout():
-        response = make_response(redirect(url_for('login')))
-        response.set_cookie('mmustudent','',expires=0)
-        return response
+    
+@app.route('/logout')    
+def logout():
+    response = make_response(redirect(url_for('login')))
+    response.set_cookie('mmustudent','',expires=0)
+    return response
 
 
 if __name__ == '__main__':
