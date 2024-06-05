@@ -246,9 +246,12 @@ nav ul li a:hover{
     height: 300px;
     display: block;
     margin: 0 auto;
-    margin-top: -50px;
+    margin-top: -40px;
+    margin-bottom: 5px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .product-preview .preview .fa-times{
