@@ -56,6 +56,7 @@
      </div>
  
      <div class="product-container1">
+        <!-- {% if mmustudent %} -->
  
          <div class="product" data-name="p-1">
              <img src="{{url_for('static',filename='e57193d6ee7d6cb489d6f77c11b1bb79.jpg_720x720q80.jpg')}}" alt="product-image">
@@ -335,11 +336,228 @@
                 <i class=" fas fa-star"></i>
              </div>
          </div>
-         
 
+         <!-- {% else %} -->
+
+            <div class="product" data-name="p-1">
+             <img src="{{url_for('static',filename='e57193d6ee7d6cb489d6f77c11b1bb79.jpg_720x720q80.jpg')}}" alt="product-image">
+             <h2 class="product-title">Snoopy T-Shirt</h2>
+             <p class="product-price">RM23</p>
+             <p class="product-description">Clothes</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-2">
+             <img src="{{url_for('static',filename='s-l1200.jpg')}}" alt="product-image">
+             <h2 class="product-title">Beige coloured Word T-Shirt</h2>
+             <p class="product-price">RM30</p>
+             <p class="product-description">Clothes</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-3">
+             <img src="{{url_for('static',filename='TPBL-129-Women-White-Short-Sleeve-T-Shirt-450x450.jpg')}}" alt="product-image">
+             <h2 class="product-title">Graphics T-Shirt</h2>
+             <p class="product-price">RM20</p>
+             <p class="product-description">Clothes</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-4">
+             <img src="{{url_for('static',filename='jk.jpg')}}" alt="product-image">
+             <h2 class="product-title">JK Skirt</h2>
+             <p class="product-price">RM80</p>
+             <p class="product-description">Clothes</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-5">
+             <img src="{{url_for('static',filename='shoes1.jpg')}}" alt="product-image">
+             <h2 class="product-title">Sport Shoes</h2>
+             <p class="product-price">RM199.99</p>
+             <p class="product-description">Shoes</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-6">
+             <img src="{{url_for('static',filename='shark slipper.jpg')}}" alt="product-image">
+             <h2 class="product-title">Shark Slipper</h2>
+             <p class="product-price">RM25</p>
+             <p class="product-description">Shoes</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-7">
+             <img src="{{url_for('static',filename='slipper 1.png')}}" alt="product-image">
+             <h2 class="product-title">Slipper</h2>
+             <p class="product-price">RM15</p>
+             <p class="product-description">Shoes</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-8">
+             <img src="{{url_for('static',filename='sport shoes 2.png')}}" alt="product-image">
+             <h2 class="product-title">Sport Shoes white</h2>
+             <p class="product-price">RM179.99</p>
+             <p class="product-description">Shoes</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-9">
+             <img src="{{url_for('static',filename='sport shoes.png')}}" alt="product-image">
+             <h2 class="product-title">Sport Shoes black</h2>
+             <p class="product-price">RM179.99</p>
+             <p class="product-description">Shoes</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-10">
+             <img src="{{url_for('static',filename='lipstick.png')}}" alt="product-image">
+             <h2 class="product-title">Lipstick</h2>
+             <p class="product-price">RM85</p>
+             <p class="product-description">Cosmetics</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-11">
+             <img src="{{url_for('static',filename='foundation.png')}}" alt="product-image">
+             <h2 class="product-title">Foundation</h2>
+             <p class="product-price">RM198</p>
+             <p class="product-description">Cosmetics</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-12">
+             <img src="{{url_for('static',filename='toner.png')}}" alt="product-image">
+             <h2 class="product-title">Toner</h2>
+             <p class="product-price">RM67.20</p>
+             <p class="product-description">Cosmetics</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-13">
+             <img src="{{url_for('static',filename='body lotion.png')}}" alt="product-image">
+             <h2 class="product-title">Body Lotion</h2>
+             <p class="product-price">RM26.50</p>
+             <p class="product-description">Healthcare</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-14">
+             <img src="{{url_for('static',filename='mask.png')}}" alt="product-image">
+             <h2 class="product-title">Mask</h2>
+             <p class="product-price">RM6.50</p>
+             <p class="product-description">Healthcare</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-15">
+             <img src="{{url_for('static',filename='cleanser.png')}}" alt="product-image">
+             <h2 class="product-title">Cleanser</h2>
+             <p class="product-price">RM47</p>
+             <p class="product-description">Healthcare</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+ 
+         <div class="product" data-name="p-16">
+             <img src="{{url_for('static',filename='sanitary napkin.png')}}" alt="product-image">
+             <h2 class="product-title">Sanitary napkin</h2>
+             <p class="product-price">RM29.20</p>
+             <p class="product-description">Healthcare</p>
+             <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+             </div>
+         </div>
+         <!-- {% endif %} -->
      </div>
 
      <div class="product-preview">
+        <!-- {% if mmustudent %} -->
 
         <div class="preview" data-target="p-1">
             <i class="fas fa-times"></i>
@@ -382,7 +600,6 @@
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
-                <i class=" fas fa-star"></i>
             </div>
             <h2 class="product-price">
                 <span class="original-price">RM30</span>
@@ -406,10 +623,9 @@
         <div class="preview" data-target="p-3">
             <i class="fas fa-times"></i>
             <h6>Women / Clothes</h6>
-            <img src="{{url_for('static',filename='TPBL-129-Women-White-Short-Sleeve-T-Shirt-450x450.jpg')}}" alt="product image">
+            <img src="TPBL-129-Women-White-Short-Sleeve-T-Shirt-450x450.jpg" alt="product image">
             <h4>Graphics T-Shirt</h4>
             <div class ="star">
-                <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
@@ -437,11 +653,9 @@
         <div class="preview" data-target="p-4">
             <i class="fas fa-times"></i>
             <h6>Women / Clothes</h6>
-            <img src="{{url_for('static',filename='jk.jpg')}}" alt="product image">
+            <img src="jk.jpg" alt="product image">
             <h4>JK Skirt</h4>
             <div class ="star">
-                <i class=" fas fa-star"></i>
-                <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
@@ -468,10 +682,9 @@
         <div class="preview" data-target="p-5">
             <i class="fas fa-times"></i>
             <h6>Women / Shoes</h6>
-            <img src="{{url_for('static',filename='shoes1.jpg')}}" alt="product image">
+            <img src="shoes1.jpg" alt="product image">
             <h4>Sport Shoes</h4>
             <div class ="star">
-                <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
@@ -498,7 +711,7 @@
 
         <div class="preview" data-target="p-6">
             <i class="fas fa-times"></i>
-            <img src="{{url_for('static',filename='shark slipper.jpg')}}" alt="product image">
+            <img src="shark slipper.jpg" alt="product image">
             <h6>Women / Shoes</h6>
             <h4>Shark Slipper</h4>
             <div class ="star">
@@ -533,7 +746,6 @@
             <img src="{{url_for('static',filename='slipper 1.png')}}" alt="product image">
             <h4>Slipper</h4>
             <div class ="star">
-                <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
@@ -599,7 +811,6 @@
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
-                <i class=" fas fa-star"></i>
             </div>
             <h2 class="product-price">
                 <span class="original-price">RM23</span>
@@ -653,7 +864,6 @@
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
-                <i class=" fas fa-star"></i>
             </div>
             <h2 class="product-price">
                 <span class="original-price">RM198</span>
@@ -695,7 +905,6 @@
             <img src="{{url_for('static',filename='body lotion.png')}}" alt="product image">
             <h4>Body Lotion</h4>
             <div class ="star">
-                <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
                 <i class=" fas fa-star"></i>
@@ -781,7 +990,376 @@
             <p>###</p>
         </div>
 
-        
+            <!-- {% else %} -->
+
+         <div class="preview" data-target="p-1">
+            <i class="fas fa-times"></i>
+            <h6>Women / Clothes</h6>
+            <img src="e57193d6ee7d6cb489d6f77c11b1bb79.jpg_720x720q80.jpg" alt="product image">
+            <h4>Snoopy T-Shirt</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM23</h2>
+            <select>
+                <option>Select Size</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+            </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-2">
+            <i class="fas fa-times"></i>
+            <h6>Women / Clothes</h6>
+            <img src="s-l1200.jpg"alt="product image">
+            <h4>Beige coloured Word T-Shirt</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM30</h2>
+            <select>
+                <option>Select Size</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+            </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-3">
+            <i class="fas fa-times"></i>
+            <h6>Women / Clothes</h6>
+            <img src="TPBL-129-Women-White-Short-Sleeve-T-Shirt-450x450.jpg" alt="product image">
+            <h4>Graphics T-Shirt</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM23</h2>
+            <select>
+                <option>Select Size</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+                </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-4">
+            <i class="fas fa-times"></i>
+            <h6>Women / Clothes</h6>
+            <img src="jk.jpg" alt="product image">
+            <h4>JK Skirt</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM80</h2>
+            <select>
+                <option>Select Size</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+                </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-5">
+            <i class="fas fa-times"></i>
+            <h6>Women / Shoes</h6>
+            <img src="shoes1.jpg" alt="product image">
+            <h4>Sport Shoes</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM199.99</h2>
+            <select>
+                <option>Select Size</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-6">
+            <i class="fas fa-times"></i>
+            <img src="shark slipper.jpg" alt="product image">
+            <h6>Women / Shoes</h6>
+            <h4>Shark Slipper</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM25</h2>
+            <select>
+                <option>Select Size</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-7">
+            <i class="fas fa-times"></i>
+            <h6>Women / Shoes</h6>
+            <img src="{{url_for('static',filename='slipper 1.png')}}" alt="product image">
+            <h4>Slipper</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM15</h2>
+            <select>
+                <option>Select Size</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-8">
+            <i class="fas fa-times"></i>
+            <h6>Women / Shoes</h6>
+            <img src="{{url_for('static',filename='sport shoes 2.png')}}" alt="product image">
+            <h4>Sport Shoes White</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM179.99</h2>
+            <select>
+                <option>Select Size</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-9">
+            <i class="fas fa-times"></i>
+            <h6>Women / Shoes</h6>
+            <img src="{{url_for('static',filename='sport shoes.png')}}" alt="product image">
+            <h4>Sport Shoes black</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM23</h2>
+            <select>
+                <option>Select Size</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                </select>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-10">
+            <i class="fas fa-times"></i>
+            <h6>Women / Cosmetics</h6>
+            <img src="{{url_for('static',filename='lipstick.png')}}" alt="product image">
+            <h4>Lipstick</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM85</h2>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-11">
+            <i class="fas fa-times"></i>
+            <h6>Women / Cosmetics</h6>
+            <img src="{{url_for('static',filename='foundation.png')}}" alt="product image">
+            <h4>Foundation</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM198</h2>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-12">
+            <i class="fas fa-times"></i>
+            <h6>Women / Cosmetics</h6>
+            <img src="{{url_for('static',filename='toner.png')}}" alt="product image">
+            <h4>Toner</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM67.20</h2>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-13">
+            <i class="fas fa-times"></i>
+            <h6>Women / Healthcare</h6>
+            <img src="{{url_for('static',filename='body lotion.png')}}" alt="product image">
+            <h4>Body Lotion</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM26.50</h2>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-14">
+            <i class="fas fa-times"></i>
+            <h6>Women / Healthcare</h6>
+            <img src="{{url_for('static',filename='mask.png')}}" alt="product image">
+            <h4>Mask</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM6.50</h2>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-15">
+            <i class="fas fa-times"></i>
+            <h6>Women / Healthcare</h6>
+            <img src="{{url_for('static',filename='cleanser.png')}}" alt="product image">
+            <h4>Cleanser</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM47</h2>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+        <div class="preview" data-target="p-16">
+            <i class="fas fa-times"></i>
+            <h6>Women / Healthcare</h6>
+            <img src="{{url_for('static',filename='sanitary napkin.png')}}" alt="product image">
+            <h4>Sanitary napkin</h4>
+            <div class ="star">
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+                <i class=" fas fa-star"></i>
+            </div>
+            <h2 class="product-price">RM29.20</h2>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h5>Prodcut Details</h5>
+            <p>###</p>
+        </div>
+
+            <!-- {% endif %} -->
 
     </div>
  
