@@ -65,9 +65,6 @@ nav ul li a:hover{
     width: 220px;
     overflow-y: auto;
     margin-top: 280px;
-    
-
-
 }
 
 .type{
@@ -76,18 +73,39 @@ nav ul li a:hover{
     border: none;
     margin-bottom: 10px;
     padding: 10px;
-    height: 30px;
+    height: 40px;
     justify-content: center;
-    text-align: left;
+    text-align: center;
+    font-weight: bold;
 }
 
-.type h2{
+.type button{
     margin: 0;
     padding-left: 0px;
     padding-top: 5px;
     padding-bottom:10px;
-    font-size: 125%;
+    font-family: 125%;
     width: 200px;
+    border: none;
+}
+
+.active-btn{
+    color: #555;
+}
+.active-btn::after{
+    width: 100%;
+}
+
+.sorting{
+        height: 50px;
+        padding: 12px;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        border: none;
+        background: #f1efef;
+        z-index: -1;
 }
 
 .product-container1{
@@ -98,7 +116,7 @@ nav ul li a:hover{
     width: 83%;
     height: auto;
     margin-left: 250px;
-    margin-top: -370px;
+    margin-top: -240px;
     
 }
 
@@ -219,8 +237,8 @@ nav ul li a:hover{
     top: 0; left: 0;
     min-height: 100vh;
     width: 100%;
-    background-color: #000000;
-    opacity: 85%;
+    background: #4f4e4e;
+    opacity: 0.85;
     display: none;
     align-items: center;
     justify-content: center;
@@ -232,10 +250,10 @@ nav ul li a:hover{
     text-align: center;
     background: #ffffff;
     opacity: 100%;
-    z-index: 1;
+    z-index: -1;
     position: relative;
     margin: 2rem;
-    width: 40rem;
+    width: 60rem;
 }
 
 .product-preview .preview.active{
@@ -260,7 +278,7 @@ nav ul li a:hover{
     top: 1rem; right: 1.5rem;
     cursor: pointer;
     color: #444;
-    font-size: 4rem;
+    font-size: 2rem;
 }
 
 .product-preview .preview .fa-times:hover{
@@ -271,7 +289,7 @@ nav ul li a:hover{
     color: #444;
     padding: .5rem 0;
     font-size: 20px;
-    margin-left: -500px;
+    margin-left: auto;
 }
 
 .product-preview .preview h4{
@@ -279,6 +297,7 @@ nav ul li a:hover{
     padding: .5rem 0;
     font-size: 30px;
     margin-top: -10px;
+    margin-left: auto;
 }
 
 .product-preview .preview .star{
@@ -299,19 +318,20 @@ nav ul li a:hover{
 }
 
 .product-preview .preview select{
-    display: block;
+    height: 40px;
     padding: 10px;
-    margin-top: -10px;
-    margin-left: 250px;
+    margin-top: -11px;
+    margin-left: 150px;
     margin-bottom: 10px;
+    border: 1px solid;
+
 }
 
 .product-preview .preview input{
     width: 50px;
-    height: 30px;
-    margin-left: -50px;
+    height: 38px;
     font-size: 20px;
-    margin-right: 10px;
+    margin-left: 20px;
     border: 1px solid black;
 }
 
@@ -322,8 +342,7 @@ nav ul li a:hover{
     font-weight: 900;
     border: 1px solid rgb(255, 0, 0);
     border-radius: 20px;
-    margin-left: 20px;
-    position: absolute;
+    margin-left: 20px; 
 }
 
 .product-preview .preview button:hover{

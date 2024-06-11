@@ -12,18 +12,35 @@
 </head>
 
 <body>
+    <!-- {% if mmustudent %} -->
     <nav>
-        <img src="{{url_for('static',filename='mmu_image.jpg')}}" alt="MMU Logo" style="width: 100px; height: auto;">
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
             <ul>
-                <li style="position: fixed; top:10px; left: 350px;"><a href ="#">Home</a></li>
-                <li style="position: fixed; top: 10px; left: 450px;"><a href ="#">2-hand shop</a></li>
-                <li style="position: fixed; top: 10px; left: 620px;"><a href ='electronic devices.html'>Electronic devices</a></li>
-                <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
-                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='women.html'>Women</a></li>
-                <li style="position: fixed; top: 10px; left: 1250px;"><a href ='#'>MMU Stuff</a></li>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('mmustudent',name=name) }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop',name=name)}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ="{{url_for('electronicdevice',name=name)}}">Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ="{{url_for('menspage',name=name)}}">Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ="{{url_for('womenpage',name=name)}}">Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ="{{url_for('mmustuff',name=name)}}">MMU Stuff</a></li>
             </ul>
 
     </nav>
+    <!-- {% else %}
+
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('notmmustudent',name=name) }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('notsecondhandshop',name=name)}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ="{{url_for('notelectronicdevice',name=name)}}">Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ="{{url_for('notmenspage',name=name)}}">Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ="{{url_for('notwomenpage',name=name)}}">Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ="{{url_for('notmmustuff',name=name)}}">MMU Stuff</a></li>
+            </ul>
+
+    </nav> -->
+
+    <!-- {% endif %} -->
 
 
 
@@ -475,7 +492,7 @@
                  </div>
             </div>
 
-            <!-- {% else %} -->
+            <!-- {% else %}
 
         <div class="product" data-name="p-1">
             <img src="{{url_for('static',filename='mini fans.jpg')}}" alt="product-image">
@@ -798,7 +815,7 @@
              </div>
         </div>
 
-            <!-- {% endif %} -->
+            {% endif %} -->
             
         </div>
 
@@ -1335,9 +1352,7 @@
                 <p>###</p>
             </div>
 
-
-
-            <!-- {% else %} -->
+            <!-- {% else %}
 
             <div class="preview" data-target="p-1">
                 <i class="fas fa-times"></i>
@@ -1773,7 +1788,7 @@
                 <p>###</p>
             </div>
 
-            <!-- {% endif %} -->
+            {% endif %} -->
 
         </div>
     
