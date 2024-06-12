@@ -20,3 +20,21 @@ function filterProducts() {
         }
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const types = document.querySelectorAll('.type');
+    const products = document.querySelectorAll('.product');
+
+    types.forEach(type => {
+        type.addEventListener('mouseenter', () => {
+            const category = type.getAttribute('data-category');
+            products.forEach(product => {
+                if (product.getAttribute('data-category') === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });      
+            });
+        });
+

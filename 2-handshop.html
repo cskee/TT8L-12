@@ -1,0 +1,384 @@
+<html>
+<head>
+<title>2-handshop</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='2-handshop.css') }}">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+    {% if mmustudent %}
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('mmustudent',name=name) }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('secondhandshop',name=name)}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ='#'>MMU Stuff</a></li>
+            </ul>
+
+    </nav>
+    {% else %}
+
+    <nav>
+        <img src="{{ url_for('static', filename='mmu_image.jpg') }}" alt="MMU Logo" style="width: 100px; height: auto;">
+            <ul>
+                <li style="position: fixed; top:10px; left: 350px;"><a href ="{{ url_for('notmmustudent',name=name) }}">Home</a></li>
+                <li style="position: fixed; top: 10px; left: 450px;"><a href ="{{ url_for('notsecondhandshop',name=name)}}">2-hand shop</a></li>
+                <li style="position: fixed; top: 10px; left: 620px;"><a href ='#'>Electronic devices</a></li>
+                <li style="position: fixed; top: 10px; left: 900px;"><a href ='#'>Men</a></li>
+                <li style="position: fixed; top: 10px; left: 1100px;"><a href ='#'>Women</a></li>
+                <li style="position: fixed; top: 10px; left: 1250px;"><a href ='#'>MMU Stuff</a></li>
+            </ul>
+
+    </nav>
+
+    {% endif %}
+
+
+
+<h1 style="position: absolute; top: 180px; left: 10px;font-size: 325%;">2-handshop</h1>
+<form>
+    <div class="search" style="position: absolute; top: 220px; right: 100px;">
+        <span class="search-icon material-symbols-outlined">search</span>
+        <input class="search-input" type="search" placeholder="Search.." >
+    </div>
+
+    <div class="types_container">
+        <div class="type">
+            <h2>shoes</h2>
+        </div>
+        <div class="type">
+            <h2>clothes</h2>
+        </div>
+        <div class="type">
+            <h2>hat</h2>
+        </div>
+        <div class="type">
+            <h2>laptop</h2>
+        </div>
+        <div class="type">
+            <h2>smartphone</h2>
+        </div>
+        <div class="type">
+            <h2>stationary</h2>
+        </div>
+    </div>
+
+
+    <div class="product-container1">
+        {% if mmustudent %}
+
+        <div class="product">
+            <img src="2-handshopimages\shoe1.jpg">
+            <h2 class="product-title">Asics gel lyte iii x AFEW</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 250</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/shoe2.jpg" alt="product-image">
+            <h2 class="product-title">Bonia Sandal</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 95</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/shoe3.jpg" alt="product-image">
+            <h2 class="product-title">Vans shoe</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 110</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/prelove sweater.jpeg" alt="product-image">
+            <h2 class="product-title">Prelove sweater</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 25</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/oppo.jpeg" alt="product-image">
+            <h2 class="product-title">OPPO A3S(6GB+128GB) Second Hand Global version of the smartphone 95</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 170</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/book2.jpeg" alt="product-image">
+            <h2 class="product-title">Comic books</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 25</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/vivo.jpeg" alt="product-image">
+            <h2 class="product-title">VIVOY75(6GB+128GB) Dual SIM 100% original global version</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 93</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/shirt1.jpg" alt="product-image">
+            <h2 class="product-title">Real Madrid jersey 2023/24</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 40</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/sweater2.jpg" alt="product-image">
+            <h2 class="product-title">Vintage Y2k Southpole camo thermal shirt</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 55</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/sweater3.jpeg" alt="product-image">
+            <h2 class="product-title">Prairie Mountain Sweatshirt shirt coat for Woman</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 30</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/chair1.jpg" alt="product-image">
+            <h2 class="product-title">Gaming chair</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 165</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/badminton1.jpg" alt="product-image">
+            <h2 class="product-title">Yonex Racquet</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 120</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/badminton2.jpg" alt="product-image">
+            <h2 class="product-title">Apacs Invader 5000 Badminton Racquet</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 140</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/golf1.jpg" alt="product-image">
+            <h2 class="product-title">Full Set Golf Clubs For Cheap Sale</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 290</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/keyboard1.jpg" alt="product-image">
+            <h2 class="product-title">Rog Strix Scoped NX TKL gaming keyboard</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 180</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/speaker.jpg" alt="product-image">
+            <h2 class="product-title">JBL Speaker</h2>
+            <p class="product-price">
+                <span class="original-price">$129.99</span>
+                <span class="discounted-price">RM 130</span>
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">MMU STUFF</p>
+        </div>
+        
+        </div>
+
+        {% else %}
+
+        <div class="product">
+            <img src="2-handshopimages/badminton1.jpg">
+            <h2 class="product-title">Yonex Racquet</h2>
+            <p class="product-price">RM 132</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/badminton2.jpg">
+            <h2 class="product-title">Apacs Invader 5000 Badminton Racquet</h2>
+            <p class="product-price">RM 154</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/golf1.jpg">
+            <h2 class="product-title">Full Set Golf Clubs For Cheap Sale</h2>
+            <p class="product-price">RM 319</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/chair1.jpg">
+            <h2 class="product-title">Gaming chair</h2>
+            <p class="product-price">RM 181.5</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/shoe1.jpg">
+            <h2 class="product-title">Asics gel lyte iii x AFEW</h2>
+            <p class="product-price">RM 275</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/shoe2.jpg">
+            <h2 class="product-title">Bonia Sandal</h2>
+            <p class="product-price">RM 104.5</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/shoe3.jpg">
+            <h2 class="product-title">Vans shoe</h2>
+            <p class="product-price">RM 121</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/oppo.jpeg">
+            <h2 class="product-title">OPPO A3S(6GB+128GB) Second Hand Global version of the smartphone 95</h2>
+            <p class="product-price">RM  187</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/vivo.jpeg">
+            <h2 class="product-title">VIVOY75(6GB+128GB) Dual SIM 100% original global version</h2>
+            <p class="product-price">RM 102.3</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/shirt1.jpg">
+            <h2 class="product-title">Real Madrid jersey 2023/24</h2>
+            <p class="product-price">RM 44</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/sweater2.jpg">
+            <h2 class="product-title">Vintage Y2k Southpole camo thermal shirt</h2>
+            <p class="product-price">RM 60.5</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/sweater3.jpeg">
+            <h2 class="product-title">Prairie Mountain Sweatshirt shirt coat for Woman</h2>
+            <p class="product-price">RM 33</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/prelove sweater.jpeg">
+            <h2 class="product-title">Prelove sweater</h2>
+            <p class="product-price">RM  137.5</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/book2.jpeg">
+            <h2 class="product-title">Comic books</h2>
+            <p class="product-price">RM 27.5</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/speaker.jpg">
+            <h2 class="product-title">JBL Speaker</h2>
+            <p class="product-price">RM 143</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        <div class="product">
+            <img src="2-handshopimages/keyboard1.jpg">
+            <h2 class="product-title">Rog Strix Scoped NX TKL gaming keyboard</h2>
+            <p class="product-price">RM  198</p>
+            <p class="product-description">2-handshop</p>
+        </div>
+
+        {% endif %}
+    </div>
+
+    <div class="conclusion">
+        <h1>2-handshop</h1>
+        <h3>Checkout our other products</h3>
+        
+        <div class="navimg">
+            <div class="textimg">
+                <img src="{{url_for('static',filename='2-handimg.png')}}">
+                <div class="text-over-image">2-handshop</div>
+            </div>
+            
+        </div>
+        
+    </div>
+</form>
+</body>
+</html>
