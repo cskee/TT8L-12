@@ -17,6 +17,10 @@ def allowed_file(filename):
 def write_data(product):
     with open('product.txt', 'a') as file:
         file.write(f"{product['product_name']},{product['price']},{product['type']},{product['image']}\n")
+    
+    if product['type'] == '2-handshop':
+        with open('2_handshop_products.txt', 'a') as file:
+            file.write(f"{product['product_name']},{product['price']},{product['type']},{product['image']}\n")
 
 def delete_data(product):
     with open('product.txt', 'r') as file:
@@ -37,7 +41,16 @@ def read_data():
             if len(parts) == 4:
                 product_name, price, p_type, image = parts
                 products.append({'product_name': product_name, 'price': price, 'type': p_type, 'image': image})
+
+    with open('2_handshop_products.txt', 'r') as file:
+        for line in file:
+            parts = line.strip().split(',')
+            if len(parts) == 4:
+                product_name, price, p_type, image = parts
+                products.append({'product_name': product_name, 'price': price, 'type': p_type, 'image': image})
+
     return products
+
 
 
 
@@ -56,9 +69,12 @@ def product():
     if 'delete' in request.form:
         product_name_to_delete = request.form['delete']
         delete_data({'product_name': product_name_to_delete})
-        return redirect(url_for('mmustudent',name=name))
+        if mmu_student:
+            return redirect(url_for('mmustudent', name=name))
+        else:
+            return redirect(url_for('notmmustudent', name=name))
     else:
-         if request.method == 'POST':
+        if request.method == 'POST':
             if 'image' not in request.files:
                 return redirect(request.url)
             file = request.files['image']
@@ -70,17 +86,25 @@ def product():
                     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
                     new_product = {
-                        'name': request.form['name'],
                         'product_name': request.form['product_name'],
                         'price': request.form['price'],
                         'type': request.form['type'],
                         'image': filename
                     }
                     write_data(new_product)
+
+                    if new_product['type'] == '2-handshop':
+                        if mmu_student:
+                            return redirect(url_for('secondhandshop', name=name)) 
+                        else:
+                            return redirect(url_for('notsecondhandshop', name=name))
+
                 except Exception as e:
                     print(f"Error saving product: {e}")
-    return redirect(url_for('mmustudent', name=name))
-
+    if mmu_student:
+        return redirect(url_for('mmustudent', name=name))
+    else:
+        return redirect(url_for('notmmustudent', name=name))
 
 
 @app.route('/')
@@ -101,11 +125,13 @@ def notmmustudent(name):
 
 @app.route("/2-handshop/<name>")
 def secondhandshop(name):
-    return render_template("2-handshop.html",name=name,mmustudent=mmustudent)
+    products = read_data()
+    return render_template("2-handshop.html",name=name,mmustudent=mmustudent,products=products)
 
 @app.route("/not2-handshop/<name>")
 def notsecondhandshop(name):
-    return render_template("2-handshop.html" ,name=name)
+    products = read_data()
+    return render_template("2-handshop.html" ,name=name,products=products)
 
 @app.route("/menspage.html/<name>")
 def menspage(name):

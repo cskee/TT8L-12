@@ -1,0 +1,2 @@
+book,75,2-handshop,book.jpg
+greenscreen,10,2-handshop,greenscreen.png

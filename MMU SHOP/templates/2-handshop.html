@@ -70,6 +70,25 @@
     <div class="product-container1">
         {% if mmustudent %}
 
+        {% for item in products %}
+        <div class="product">
+        <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="{{ item.product_name }}">
+        <h2 class="product-title">{{ item.product_name }}</h2>
+        <p class="product-price">
+            <span class="original-price">{{ item.price }}</span>
+            <span class="discounted-price">RM 250</span>
+            {% if mmustudent %}
+                <span class="discount">10% off</span>
+            {% endif %}
+        </p>
+        <p class="product-description">{{ item.type }}</p>
+        <form action="{{ url_for('product') }}" method="post">
+            <input type="hidden" name="delete" value="{{ item.product_name }}">
+            <button type="submit">Delete</button>
+        </form>
+        </div>
+        {% endfor %}
+
         <div class="product">
             <img src="{{url_for('static',filename='shoe1.jpg')}}">
             <h2 class="product-title">Asics gel lyte iii x AFEW</h2>
