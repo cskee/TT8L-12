@@ -42,7 +42,7 @@
 <form>
     <div class="search" style="position: absolute; top: 220px; right: 100px;">
         <span class="search-icon material-symbols-outlined">search</span>
-        <input class="search-input" type="search" placeholder="Search.." >
+        <input id="search-input" class="search-input" type="search" placeholder="Search.." onkeypress="Enter(event)">
     </div>
 
     <div class="types_container">
@@ -68,300 +68,56 @@
 
 
     <div class="product-container1">
-        {% if mmustudent %}
-
+        {% if mmustudent%}
+    
+        {% for item in products %}
         <div class="product">
-            <img src="{{url_for('static',filename='shoe1.jpg')}}">
-            <h2 class="product-title">Asics gel lyte iii x AFEW</h2>
+            <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="{{ item.name }}">
+            <h2 class="product-title">{{ item.product_name }}</h2>
             <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 250</span>
+                <span class="original-price">{{ item.price }}</span>
+                {% set original_price_float = item.price | float %}
+                {% if original_price_float %}
+                    <span class="discounted-price">RM {{ '%.2f' % (original_price_float * 0.9) }}</span>
+                {% else %}
+                    <span class="discounted-price">Price not available</span>
+                {% endif %}
                 <span class="discount">10% off</span>
             </p>
-            <p class="product-description">2-handshop</p>
+            <p class="product-description">{{ item.type }}</p>
+            {% if name == item.username %}
+            <form action="{{ url_for('product', name=name) }}" method="post">
+                    <input type="text" name="username" placeholder="Username.." value="{{ name }}" required>
+                    <input type="hidden" name="delete" value="{{ item.product_name }}">
+                    <button type="submit">Delete</button>
+            </form>
+            {% endif %}
         </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shoe2.jpg')}}" alt="product-image">
-            <h2 class="product-title">Bonia Sandal</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 95</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shoe3.jpg')}}"  alt="product-image">
-            <h2 class="product-title">Vans shoe</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 110</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='prelove sweater.jpg')}}"  alt="product-image">
-            <h2 class="product-title">Prelove sweater</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 25</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='oppo.jpg')}}" alt="product-image">
-            <h2 class="product-title">OPPO A3S(6GB+128GB) Second Hand Global version of the smartphone 95</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 170</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='book2.jpg')}}"  alt="product-image">
-            <h2 class="product-title">Comic books</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 25</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='vivo.jpg')}}"  alt="product-image">
-            <h2 class="product-title">VIVOY75(6GB+128GB) Dual SIM 100% original global version</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 93</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shirt1.jpg')}}"  alt="product-image">
-            <h2 class="product-title">Real Madrid jersey 2023/24</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 40</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='sweater2.jpg')}}" alt="product-image">
-            <h2 class="product-title">Vintage Y2k Southpole camo thermal shirt</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 55</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='sweater3.jpg')}}" alt="product-image">
-            <h2 class="product-title">Prairie Mountain Sweatshirt shirt coat for Woman</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 30</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='chair1.jpg')}}" alt="product-image">
-            <h2 class="product-title">Gaming chair</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 165</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='badminton1.jpg')}}" alt="product-image">
-            <h2 class="product-title">Yonex Racquet</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 120</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='badminton2.jpg')}}"  alt="product-image">
-            <h2 class="product-title">Apacs Invader 5000 Badminton Racquet</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 140</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='golf1.jpg')}}" alt="product-image">
-            <h2 class="product-title">Full Set Golf Clubs For Cheap Sale</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 290</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='keyboard1.jpg')}}"  alt="product-image">
-            <h2 class="product-title">Rog Strix Scoped NX TKL gaming keyboard</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 180</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='speaker.jpg')}}"  alt="product-image">
-            <h2 class="product-title">JBL Speaker</h2>
-            <p class="product-price">
-                <span class="original-price">RM129.99</span>
-                <span class="discounted-price">RM 130</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">MMU STUFF</p>
-        </div>
-        
-        </div>
-
+        {% endfor %}
+    
+    
+    
         {% else %}
 
+        {% for item in products %}
         <div class="product">
-            <img src="{{url_for('static',filename='badminton1.jpg')}}" >
-            <h2 class="product-title">Yonex Racquet</h2>
-            <p class="product-price">RM 132</p>
-            <p class="product-description">2-handshop</p>
+        <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="{{ item.name }}">
+        <h2 class="product-title">{{ item.product_name }}</h2>
+        <p class="product-price">
+            <span class="product-price">{{ item.price }}</span>
+        </p>
+        <p class="product-description">{{ item.type }}</p>
+        {% if name == item.username %}
+        <form action="{{ url_for('product',name=name) }}" method="post">
+            <input type="text" name="username" placeholder="Username.." value="{{name}}" required>
+            <input type="hidden" name="delete" value="{{ item.product_name }}">
+            <button type="submit">Delete</button>
+        </form>
+        {%  endif %}
         </div>
+        {% endfor %}
 
-        <div class="product">
-            <img src="{{url_for('static',filename='badminton2.jpg')}}" >
-            <h2 class="product-title">Apacs Invader 5000 Badminton Racquet</h2>
-            <p class="product-price">RM 154</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='golf1.jpg')}}" >
-            <h2 class="product-title">Full Set Golf Clubs For Cheap Sale</h2>
-            <p class="product-price">RM 319</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='chair1.jpg')}}" >
-            <h2 class="product-title">Gaming chair</h2>
-            <p class="product-price">RM 181.5</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shoe1.jpg')}}" >
-            <h2 class="product-title">Asics gel lyte iii x AFEW</h2>
-            <p class="product-price">RM 275</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shoe2.jpg')}}" >
-            <h2 class="product-title">Bonia Sandal</h2>
-            <p class="product-price">RM 104.5</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shoe3.jpg')}}" >
-            <h2 class="product-title">Vans shoe</h2>
-            <p class="product-price">RM 121</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='oppo.jpg')}}" >
-            <h2 class="product-title">OPPO A3S(6GB+128GB) Second Hand Global version of the smartphone 95</h2>
-            <p class="product-price">RM  187</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='vivo.jpg')}}" >
-            <h2 class="product-title">VIVOY75(6GB+128GB) Dual SIM 100% original global version</h2>
-            <p class="product-price">RM 102.3</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shirt1.jpg')}}" >
-            <h2 class="product-title">Real Madrid jersey 2023/24</h2>
-            <p class="product-price">RM 44</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='sweater2.jpg')}}" >
-            <h2 class="product-title">Vintage Y2k Southpole camo thermal shirt</h2>
-            <p class="product-price">RM 60.5</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='sweater3.jpg')}}" >
-            <h2 class="product-title">Prairie Mountain Sweatshirt shirt coat for Woman</h2>
-            <p class="product-price">RM 33</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='prelove sweater.jpg')}}" >
-            <h2 class="product-title">Prelove sweater</h2>
-            <p class="product-price">RM  137.5</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='book2.jpg')}}" >
-            <h2 class="product-title">Comic books</h2>
-            <p class="product-price">RM 27.5</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='speaker.jpg')}}" >
-            <h2 class="product-title">JBL Speaker</h2>
-            <p class="product-price">RM 143</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='keyboard1.jpg')}}" >
-            <h2 class="product-title">Rog Strix Scoped NX TKL gaming keyboard</h2>
-            <p class="product-price">RM  198</p>
-            <p class="product-description">2-handshop</p>
-        </div>
-
+    
         {% endif %}
     </div>
 
@@ -379,5 +135,6 @@
         
     </div>
 </form>
+    <script src="script.js"></script>
 </body>
 </html>

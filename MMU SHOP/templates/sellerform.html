@@ -4,21 +4,47 @@
 </head>
 <body>
     <div class="form-container">
-        <form action = "http://localhost:5000/uploadproduct" method = "post">
-     
+        <form action="{{url_for('product',name=name)}}" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="username" value="{{  name  }}" required>
     
             <h1>Upload your product</h1>
-  
+            <li><a href="{% if mmustudent %}{{ url_for('mmustudent', name=name) }}{% else %}{{ url_for('notmmustudent', name=name) }}{% endif %}">Home</a></li>
+            <h3>{{  name  }}</h3>
+
+            <div class="input-group">
+                <p>Username:</p>
+               <input type="text" name="username" placeholder="Product name.." value= {{name}} required>
+            </div>
+            
             <div class="input-group">
                 <p>Product name:</p>
-               <input type="email" name="product_name" placeholder="Product name.." 
+               <input type="text" name="product_name" placeholder="Product name.." 
                required>
                
             </div>
             <div class="input-group">
                 <p>Price of the product:</p>
-               <input type="password" name="price" placeholder="Price.." required>
+               <input type="number" name="price" placeholder="Price.." required>
             </div>
+
+            <select name="type" required>
+                <option value="" disabled selected>Select the type...</option>
+                <option value="2-handshop">2-handshop</option>
+                <option value="electronic-device">electronic-device</option>
+                <option value="men">men</option>
+                <option value="women">women</option>
+                <option value="mmu_stuff">mmu stuff</option>
+            </select>
+
+            <div class="input-group">
+                <p>Image of the product:</p>
+               <input type="file" name="image" required>
+            </div>
+
+            <div class="input-group">
+                <button type="submit">Add Item</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>

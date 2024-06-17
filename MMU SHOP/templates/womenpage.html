@@ -68,353 +68,63 @@
 
 
     <div class="product-container1">
-        {% if mmustudent %}
-
+        {% if mmustudent%}
+    
+        {% for item in products %}
         <div class="product">
-            <img src="{{url_for('static',filename='e57193d6ee7d6cb489d6f77c11b1bb79.jpg_720x720q80.jpg')}}">
-            <h2 class="product-title">Snoopy T-Shirt</h2>
+            <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="{{ item.name }}">
+            <h2 class="product-title">{{ item.product_name }}</h2>
             <p class="product-price">
-                <span class="original-price">RM23</span>
-                <span class="discounted-price">RM20</span>
+                <span class="original-price">{{ item.price }}</span>
+                {% set original_price_float = item.price | float %}
+                {% if original_price_float %}
+                    <span class="discounted-price">RM {{ '%.2f' % (original_price_float * 0.9) }}</span>
+                {% else %}
+                    <span class="discounted-price">Price not available</span>
+                {% endif %}
                 <span class="discount">10% off</span>
             </p>
-            <p class="product-description">Clothes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
+            <p class="product-description">{{ item.type }}</p>
+            {% if name == item.username %}
+            <form action="{{ url_for('product', name=name) }}" method="post">
+                    <input type="text" name="username" placeholder="Username.." value="{{ name }}" required>
+                    <input type="hidden" name="delete" value="{{ item.product_name }}">
+                    <button type="submit">Delete</button>
+            </form>
+            {% endif %}
         </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='s-l1200.jpg')}}" alt="product-image">
-            <h2 class="product-title">Beige coloured Word T-Shirt</h2>
-            <p class="product-price">
-                <span class="original-price">RM30</span>
-                <span class="discounted-price">RM27</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">Clothes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='TPBL-129-Women-White-Short-Sleeve-T-Shirt-450x450.jpg')}}" alt="product-image">
-            <h2 class="product-title">Graphics T-Shirt</h2>
-            <p class="product-price">
-                <span class="original-price">RM20</span>
-                <span class="discounted-price">RM18</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">Clothes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='jk.jpg')}}" alt="product-image">
-            <h2 class="product-title">JK Skirt</h2>
-            <p class="product-price">
-                <span class="original-price">RM80</span>
-                <span class="discounted-price">RM72</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">Clothes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shoes1.jpg')}}" alt="product-image">
-            <h2 class="product-title">Sport Shoes</h2>
-            <p class="product-price">
-                <span class="original-price">RM199.99</span>
-                <span class="discounted-price">RM179.99</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">Shoes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shark slipper.jpg')}}" alt="product-image">
-            <h2 class="product-title">Shark Slipper</h2>
-            <p class="product-price">
-                <span class="original-price">RM25</span>
-                <span class="discounted-price">RM22.50</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">Shoes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='slipper 1.png')}}" alt="product-image">
-            <h2 class="product-title">Slipper</h2>
-            <p class="product-price">
-                <span class="original-price">RM15</span>
-                <span class="discounted-price">RM13.50</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">Shoes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-
-
-
-        <div class="product">
-            <img src="{{url_for('static',filename='foundation.png')}}" alt="product-image">
-            <h2 class="product-title">Foundation</h2>
-            <p class="product-price">
-                <span class="original-price">RM198</span>
-                <span class="discounted-price">RM178</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">Cosmetics</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='toner.png')}}" alt="product-image">
-            <h2 class="product-title">Toner</h2>
-            <p class="product-price">
-                <span class="original-price">RM67.20</span>
-                <span class="discounted-price">RM60.49</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">Cosmetics</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-
-
-
-        <div class="product">
-            <img src="{{url_for('static',filename='sanitary napkin.png')}}" alt="product-image">
-            <h2 class="product-title">Sanitary napkin</h2>
-            <p class="product-price">
-                <span class="original-price">RM29.20</span>
-                <span class="discounted-price">RM26.20</span>
-                <span class="discount">10% off</span>
-            </p>
-            <p class="product-description">Healthcare</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-        
-        </div>
-    </div>
-
+        {% endfor %}
+    
+    
+    
         {% else %}
 
+        {% for item in products %}
         <div class="product">
-            <img src="{{url_for('static',filename='e57193d6ee7d6cb489d6f77c11b1bb79.jpg_720x720q80.jpg')}}">
-            <h2 class="product-title">Snoopy T-Shirt</h2>
-            <p class="product-price">
-                <span class="original-price1">RM23</span>
-            </p>
-            <p class="product-description">Clothes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
+        <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="{{ item.name }}">
+        <h2 class="product-title">{{ item.product_name }}</h2>
+        <p class="product-price">
+            <span class="product-price">{{ item.price }}</span>
+        </p>
+        <p class="product-description">{{ item.type }}</p>
+        {% if name == item.username %}
+        <form action="{{ url_for('product',name=name) }}" method="post">
+            <input type="text" name="username" placeholder="Username.." value="{{name}}" required>
+            <input type="hidden" name="delete" value="{{ item.product_name }}">
+            <button type="submit">Delete</button>
+        </form>
+        {%  endif %}
         </div>
+        {% endfor %}
 
-        <div class="product">
-            <img src="{{url_for('static',filename='s-l1200.jpg')}}" alt="product-image">
-            <h2 class="product-title">Being coloured Word T-Shirt</h2>
-            <p class="product-price">
-                <span class="original-price1">RM30</span>
-            </p>
-            <p class="product-description">Clothes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
+    
+        {% endif %}
 
-        <div class="product">
-            <img src="{{url_for('static',filename='TPBL-129-Women-White-Short-Sleeve-T-Shirt-450x450.jpg')}}" alt="product-image">
-            <h2 class="product-title">Graphics T-Shirt</h2>
-            <p class="product-price">
-                <span class="original-price1">RM20</span>
-            </p>
-            <p class="product-description">Clothes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='jk.jpg')}}" alt="product-image">
-            <h2 class="product-title">JK Skirt</h2>
-            <p class="product-price">
-                <span class="original-price1">RM80</span>
-            </p>
-            <p class="product-description">Clothes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shoes1.jpg')}}" alt="product-image">
-            <h2 class="product-title">Sport Shoes</h2>
-            <p class="product-price">
-                <span class="original-price1">RM199.99</span>
-            </p>
-            <p class="product-description">Shoes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='shark slipper.jpg')}}" alt="product-image">
-            <h2 class="product-title">Shark Slipper</h2>
-            <p class="product-price">
-                <span class="original-price1">RM25</span>
-            </p>
-            <p class="product-description">Shoes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='slipper 1.png')}}" alt="product-image">
-            <h2 class="product-title">Slipper</h2>
-            <p class="product-price">
-                <span class="original-price1">RM15</span>
-            </p>
-            <p class="product-description">Shoes</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-
-        <div class="product">
-            <img src="{{url_for('static',filename='foundation.png')}}" alt="product-image">
-            <h2 class="product-title">Foundation</h2>
-            <p class="product-price">
-                <span class="original-price1">RM198</span>
-            </p>
-            <p class="product-description">Cosmetics</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-        <div class="product">
-            <img src="{{url_for('static',filename='toner.png')}}" alt="product-image">
-            <h2 class="product-title">Toner</h2>
-            <p class="product-price">
-                <span class="original-price1">RM67.20</span>
-            </p>
-            <p class="product-description">Cosmetics</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
-
-
-
-        <div class="product">
-            <img src="{{url_for('static',filename='sanitary napkin.png')}}" alt="product-image">
-            <h2 class="product-title">Sanitary napkin</h2>
-            <p class="product-price">
-                <span class="original-price1">RM29.20</span>
-            </p>
-            <p class="product-description">Healthcare</p>
-            <div class ="star">
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-               <i class=" fas fa-star"></i>
-            </div>
-        </div>
         
-        </div>
+        
+        
     </div>
 
-        
-        {% endif %}
     </div>
 
     <div class="conclusion">
