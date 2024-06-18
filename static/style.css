@@ -1,3 +1,7 @@
+.border-box{
+    background-color: darkolivegreen;
+    border-radius: 10px;
+}
 nav{
     position: fixed;
     top: 0;
@@ -65,6 +69,9 @@ nav ul li a:hover{
     width: 220px;
     overflow-y: auto;
     margin-top: 280px;
+
+
+
 }
 
 .type{
@@ -73,39 +80,21 @@ nav ul li a:hover{
     border: none;
     margin-bottom: 10px;
     padding: 10px;
-    height: 40px;
+    height: 30px;
     justify-content: center;
-    text-align: center;
-    font-weight: bold;
+    text-align: left;
 }
 
-.type button{
+.type h2{
     margin: 0;
     padding-left: 0px;
     padding-top: 5px;
     padding-bottom:10px;
-    font-family: 125%;
+    font-size: 125%;
     width: 200px;
-    border: none;
 }
-
-.active-btn{
-    color: #555;
-}
-.active-btn::after{
-    width: 100%;
-}
-
-.sorting{
-        height: 50px;
-        padding: 12px;
-        width: max-content;
-        display: flex;
-        align-items: center;
-        border-radius: 10px;
-        border: none;
-        background: #f1efef;
-        z-index: -1;
+.type:hover{
+    background-color: orange;
 }
 
 .product-container1{
@@ -116,8 +105,8 @@ nav ul li a:hover{
     width: 83%;
     height: auto;
     margin-left: 250px;
-    margin-top: -240px;
-    
+    margin-top: -370px;
+
 }
 
 .product {
@@ -131,11 +120,6 @@ nav ul li a:hover{
     border-radius: 8px;
     text-align: center;
     flex: 1 1 40px;
-}
-
-.product-container1 .product:hover{
-    outline: 2px solid black;
-    outline-offset: 0;
 }
 
 .product img {
@@ -158,6 +142,9 @@ nav ul li a:hover{
     color: #999;
     text-decoration: line-through;
     margin-right: 10px; 
+}
+.original-price1 {
+    color: #007bff; 
 }
 
 .discounted-price {
@@ -213,6 +200,7 @@ nav ul li a:hover{
 .textimg img{
     width: 100%;
     height: auto;
+
 }
 
 .text-over-image{
@@ -224,131 +212,6 @@ nav ul li a:hover{
     font-size: 3rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.star{
-    color: rgb(255, 200, 0);
-    margin-top: -10px;
-    margin-bottom: 10px;
-}
-
-.product-preview{
-    position: fixed;
-    top: 0; left: 0;
-    min-height: 100vh;
-    width: 100%;
-    background: #4f4e4e;
-    opacity: 0.85;
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-
-.product-preview .preview{
-    display: none;
-    padding: 2rem;
-    text-align: center;
-    background: #ffffff;
-    opacity: 100%;
-    z-index: -1;
-    position: relative;
-    margin: 2rem;
-    width: 60rem;
-}
-
-.product-preview .preview.active{
-    display: inline-block;
-}
-
-.product-preview .preview img{
-    max-width: 100%; 
-    height: 300px;
-    display: block;
-    margin: 0 auto;
-    margin-top: -40px;
-    margin-bottom: 5px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.product-preview .preview .fa-times{
-    position: absolute;
-    top: 1rem; right: 1.5rem;
-    cursor: pointer;
-    color: #444;
-    font-size: 2rem;
-}
-
-.product-preview .preview .fa-times:hover{
-    transform: rotate(90deg);
-}
-
-.product-preview .preview h6{
-    color: #444;
-    padding: .5rem 0;
-    font-size: 20px;
-    margin-left: auto;
-}
-
-.product-preview .preview h4{
-    color: #000000;
-    padding: .5rem 0;
-    font-size: 30px;
-    margin-top: -10px;
-    margin-left: auto;
-}
-
-.product-preview .preview .star{
-    color: rgb(255, 200, 0);
-    margin-top: -35px;
-}
-
-.product-preview .preview h5{
-    color: #444;
-    padding: .5rem 0;
-    font-size: 20px;
-    margin-left: -500px;
-}
-
-.product-preview .preview p{
-    text-align: left;
-    margin-top: -40px;
-}
-
-.product-preview .preview select{
-    height: 40px;
-    padding: 10px;
-    margin-top: -11px;
-    margin-left: 150px;
-    margin-bottom: 10px;
-    border: 1px solid;
-
-}
-
-.product-preview .preview input{
-    width: 50px;
-    height: 38px;
-    font-size: 20px;
-    margin-left: 20px;
-    border: 1px solid black;
-}
-
-.product-preview .preview button{
-    font-size: 13px;
-    color: rgb(255, 51, 51);
-    padding: 10px 18px;
-    font-weight: 900;
-    border: 1px solid rgb(255, 0, 0);
-    border-radius: 20px;
-    margin-left: 20px; 
-}
-
-.product-preview .preview button:hover{
-    cursor: pointer;
-    background-color: rgb(255, 0, 0);
-    color: white;
 }
 
 @media(max-width: 768){

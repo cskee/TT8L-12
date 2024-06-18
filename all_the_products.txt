@@ -1,0 +1,8 @@
+1221108062,greenscreen,100,2-handshop,greenscreen.png
+yoojunyang0323,jeans,2,2-handshop,jeans.jpg
+1221108062,basketball1,85,men,basketball1.jpg
+1221108062,jk,80,women,jk.jpg
+1221108062,watch1,75,electronic-device,watch1.jpg
+1221108062,car sticker,5,mmu_stuff,carsticker.png
+1221108062,basketball2,95,men,basketball2.jpg
+1221107411,Sport Shoes White,150,women,sport shoes 2.png
