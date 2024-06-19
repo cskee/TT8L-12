@@ -147,8 +147,13 @@ def mmustudent(name):
 @app.route('/notmmustudent/<name>')
 def notmmustudent(name):
     username = name
-    products = read_data(username)
-    return render_template('homepage.html',name=name,products=products)
+    all_products = read_data(username)
+    secondhand_products = [product for product in all_products if product['type'] == '2-handshop']
+    mens_products = [product for product in all_products if product['type'] == 'men']
+    womens_products = [product for product in all_products if product['type'] == 'women']
+    electronic_device_products = [product for product in all_products if product['type'] == 'electronic-device']
+    mmu_stuff_products = [product for product in all_products if product['type'] == 'mmu_stuff']
+    return render_template("homepage.html", name=name, products=all_products,secondhand_products=secondhand_products,mens_products=mens_products,womens_products=womens_products,electronic_device_products=electronic_device_products,mmu_stuff_products=mmu_stuff_products)
 
 
 @app.route('/2-handshop/<name>')
