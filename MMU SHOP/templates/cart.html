@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='cart.css')}}">
+</head>
+<body>
+    <div class="border">
+        <div class="left">
+            <h2 class="items">ITEMS</h2>
+            {% for item in add_to_cart_products %}
+            <h3>&gt; {{ item.product_name }}</h3>
+            {% endfor %}
+        </div>
+        <div class="right">
+            <h2 class="summary">SUMMARY</h2>
+            <div class="summary-detail">
+                <div class="summary-item">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">RM {{ '%.2f' % total_price }}</span>
+                </div>
+                <div class="summary-item">
+                    <span>Delivery Fee:</span>
+                    <span id="delivery-fee">RM 5.00</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Total:</span>
+                    <span id="total">RM {{ '%.2f' % (total_price + 5.00) }}</span>
+                </div>
+            </div>
+            {% if mmustudent %}
+            <div class="buttons" data-mmustudent="True">
+                <button class="cancel" onclick="handleCancelClick()">Cancel</button>
+                <button class="checkout" onclick="showLoadingScreen()">Proceed to Payment</button>
+            </div>
+            {% else %}
+            <div class="buttons" data-mmustudent="False">
+                <button class="cancel" onclick="handleCancelClick()">Cancel</button>
+                <button class="checkout" onclick="showLoadingScreen()">Proceed to Payment</button>
+            </div>
+            {% endif %}
+            <div class="payment-type">
+                <div class="payment" onclick="PaymentOption(this)" data-payment="TNG">
+                    <img src="{{url_for('static',filename='TNGlogo.jpeg')}}" class='payment-logo'>
+                    <div class="TNG">Touch & Go</div>
+                </div>
+            
+                <div class="payment" onclick="PaymentOption(this)" data-payment="Cash">
+                    <img src="{{url_for('static',filename='cash.jpeg')}}" class="cash">
+                    <div class="cash">Cash</div>
+                </div>
+                    
+                <div class="payment" onclick="PaymentOption(this)" data-payment="Credit">
+                    <img src="{{url_for('static',filename='visa.jpeg')}}" class='credit'>
+                    <div class="credit">Credit card</div>
+                </div>
+                    
+            </div>         
+        </div>
+    </div>
+
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div id="tick-mark" class="tick-mark">✓</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var buttonsDiv = document.querySelector('.buttons');
+            var mmustudent = buttonsDiv.getAttribute('data-mmustudent') === 'True';
+            const name = "{{ name }}"; // Assuming 'name' is also passed from Flask
+
+            function handleCancelClick() {
+                if (mmustudent) {
+                    console.log("MMU Student is logged in.");
+                    window.location.href = "{{ url_for('mmustudent', name=name) }}";
+                } else {
+                    console.log("Not an MMU Student.");
+                    window.location.href = "{{ url_for('notmmustudent', name=name) }}";
+                }
+            }
+
+            
+
+            document.querySelector('.cancel').addEventListener('click', handleCancelClick);
+
+            function PaymentOption(element) {
+                const paymentOptions = document.querySelectorAll('.payment');
+                paymentOptions.forEach(option => {
+                    option.style.backgroundColor = ''; 
+                });
+
+                element.style.backgroundColor = 'lightblue'; 
+            }
+
+            function showLoadingScreen() {
+                const loadingScreen = document.getElementById('loading-screen');
+                const tickMark = document.getElementById('tick-mark');
+
+                loadingScreen.style.display = 'flex';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+
+                    tickMark.style.display = 'block';
+                    tickMark.style.animation = 'scaleUp 0.5s forwards';
+
+                    setTimeout(() => {
+                        tickMark.style.display = 'none';
+                        window.location.href = "{{ url_for('some_route', name=name) }}";
+                    }, 1500);
+                }, 1500);
+            }
+
+            document.querySelector('.checkout').addEventListener('click', showLoadingScreen);
+        });
+    </script>
+</body>
+</html>

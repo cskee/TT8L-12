@@ -1,3 +1,108 @@
+<div class="product-container2" style="display:none">
+    {% if mmustudent %}
+        {% for item in products %}
+        <div class="product" data-name="{{ item.product_name }}" data-price="{{ item.price }}" data-type="{{ item.type }}">
+            <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="{{ item.product_name }}">
+            <h2 class="product-title">{{ item.product_name }}</h2>
+            <p class="product-price">
+                <span class="original-price">{{ item.price }}</span>
+                {% set original_price_float = item.price | float %}
+                {% if original_price_float %}
+                    <span class="discounted-price">RM {{ '%.2f' % (original_price_float * 0.9) }}</span>
+                {% else %}
+                    <span class="discounted-price">Price not available</span>
+                {% endif %}
+                <span class="discount">10% off</span>
+            </p>
+            <p class="product-description">{{ item.type }}</p>
+            {% if name == item.username %}
+            <form action="{{ url_for('product', name=name) }}" method="post">
+                <input type="text" name="username" placeholder="Username.." value="{{ name }}" required>
+                <input type="hidden" name="delete" value="{{ item.product_name }}">
+                <button type="submit">Delete</button>
+            </form>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% else %}
+        {% for item in products %}
+        <div class="product" data-name="{{ item.product_name }}" data-price="{{ item.price }}" data-type="{{ item.type }}"">
+            <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="{{ item.product_name }}">
+            <h2 class="product-title">{{ item.product_name }}</h2>
+            <p class="original-price">{{ item.price }}</p>
+            <p class="product-description">{{ item.type }}</p>
+            {% if name == item.username %}
+            <form action="{{ url_for('product', name=name) }}" method="post">
+                <input type="text" name="username" placeholder="Username.." value="{{ name }}" required>
+                <input type="hidden" name="delete" value="{{ item.product_name }}">
+                <button type="submit">Delete</button>
+            </form>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+<div class="modal" id="product-modal">
+    {% if mmustudent %}
+        {% for item in products %}
+        <div class="modal-content" >
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <div class="col-2">
+                    <img id="modal-image" src="" alt="">
+                </div>
+                <div class="col-2">
+                    <h6 id="modal-type"></h6>
+                    <h4 id="modal-title" class="product-title"></h4>
+                    <p id="modal-price" class="product-price">
+                        <span class="original-price"></span>
+                        <span class="discounted-price"></span>
+                        <span class="discount">10% off</span>
+                    </p>
+                    <form action="{{ url_for('add_to_cart', name=name) }}" method="post">
+                        <input type="text" name="username" value="{{ name }}" required>
+                        <input type="hidden" name="product_name" id="modal-product-name" required>
+                        <input type="hidden" name="price" id="modal-product-price" required>
+                        <input type="hidden" name="type" id="modal-product-type" required>
+                        <input class="input" type="number" name="quantity" value="1" required>
+                        <input type="hidden" name="submit" value="modal-title">
+                        <button class="normal" type="submit">Add To Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        {% for item in products %}
+            <div class="modal-content" >
+                <span class="close-button">&times;</span>
+                <div class="modal-body">
+                    <div class="col-2">
+                        <img id="modal-image" src="" alt="">
+                    </div>
+                    <div class="col-2">
+                        <h6 id="modal-type"></h6>
+                        <h4 id="modal-title" class="product-title"></h4>
+                        <p id="modal-price" class="product-price">
+                            <span class="original-price"></span>
+                        </p>
+                        <form action="{{ url_for('add_to_cart', name=name) }}" method="post">
+                            <input type="text" name="username" value="{{ name }}" required>
+                            <input type="hidden" name="product_name" id="modal-product-name" required>
+                            <input type="hidden" name="price" id="modal-product-price" required>
+                            <input type="hidden" name="type" id="modal-product-type" required>
+                            <input class="input" type="number" name="quantity" value="1" required>
+                            <input type="hidden" name="submit" value="modal-title">
+                            <button class="normal" type="submit">Add To Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
 <html>
 <head>
 <title>MMU stuff</title>
@@ -68,14 +173,13 @@
 
 
     <div class="product-container1">
-        {% if mmustudent%}
-    
         {% for item in products %}
-        <div class="product">
-            <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="{{ item.name }}">
+        <div class="product" data-name="{{ item.product_name }}" data-price="{{ item.price }}" data-type="{{ item.type }}">
+            <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="{{ item.product_name }}">
             <h2 class="product-title">{{ item.product_name }}</h2>
+            {% if mmustudent %}
             <p class="product-price">
-                <span class="original-price">{{ item.price }}</span>
+                <span class="original-price">RM {{ item.price }}</span>
                 {% set original_price_float = item.price | float %}
                 {% if original_price_float %}
                     <span class="discounted-price">RM {{ '%.2f' % (original_price_float * 0.9) }}</span>
@@ -84,44 +188,149 @@
                 {% endif %}
                 <span class="discount">10% off</span>
             </p>
+            {% else %}
+            <p class="original-price">RM {{ item.price }}</p>
+            {% endif %}
             <p class="product-description">{{ item.type }}</p>
             {% if name == item.username %}
             <form action="{{ url_for('product', name=name) }}" method="post">
-                    <input type="text" name="username" placeholder="Username.." value="{{ name }}" required>
-                    <input type="hidden" name="delete" value="{{ item.product_name }}">
-                    <button type="submit">Delete</button>
+                <input type="text" name="username" placeholder="Username.." value="{{ name }}" required>
+                <input type="hidden" name="delete" value="{{ item.product_name }}">
+                <button type="submit">Delete</button>
             </form>
             {% endif %}
         </div>
         {% endfor %}
+    </div>
     
-    
-    
-        {% else %}
-
+    <div class="modal" id="product-modal">
         {% for item in products %}
-        <div class="product">
-        <img src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="{{ item.name }}">
-        <h2 class="product-title">{{ item.product_name }}</h2>
-        <p class="product-price">
-            <span class="product-price">{{ item.price }}</span>
-        </p>
-        <p class="product-description">{{ item.type }}</p>
-        {% if name == item.username %}
-        <form action="{{ url_for('product',name=name) }}" method="post">
-            <input type="text" name="username" placeholder="Username.." value="{{name}}" required>
-            <input type="hidden" name="delete" value="{{ item.product_name }}">
-            <button type="submit">Delete</button>
-        </form>
-        {%  endif %}
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="modal-body">
+                <div class="col-2">
+                    <img id="modal-image" src="{{ url_for('static', filename='uploads/' ~ item.image) }}" alt="">
+                </div>
+                <div class="col-2">
+                    <h6 id="modal-type">{{ item.type }}</h6>
+                    <h4 id="modal-title" class="product-title">{{ item.product_name }}</h4>
+                    {% if mmustudent %}
+                    <p id="modal-price" class="product-price">
+                        <span class="original-price"></span>
+                        <span class="discounted-price"></span>
+                        <span class="discount">10% off</span>
+                    </p>
+                    {% else %}
+                    <p id="modal-price" class="original-price">RM {{ item.price }}</p>
+                    {% endif %}
+    
+                    <form id="modal-form" action="{% if mmustudent%}{{url_for('add_to_cart',name=name)}}{% else%}{{url_for('notadd_to_cart',name=name)}}{% endif %}" method="post">
+                        <input type="text" name="username" value="{{ name }}" required>
+                        <input type="hidden" name="product_name" id="modal-product-name" value="{{ item.product_name }}" required>
+                        <input type="hidden" name="price" id="modal-product-price" value=" {% if mmustudent %}{{ '%.2f' % (item.price | float * 0.9) }}{% else %}{{ item.price }}{% endif %}" required>
+                        <input type="hidden" name="type" id="modal-product-type" value="{{ item.type }}" required>
+                        <input class="input" type="number" name="quantity" value="1" required>
+                        <input type="hidden" name="submit" value="modal-title">
+                        <button class="normal" type="submit">Add To Cart</button>
+                    </form>
+                
+        
+                </div>
+            </div>
         </div>
         {% endfor %}
-
-    
-        {% endif %}
-
-    
     </div>
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var modal = document.getElementById("product-modal");
+            var modalImage = document.getElementById("modal-image");
+            var modalTitle = document.getElementById("modal-title");
+            var modalPrice = document.getElementById("modal-price");
+            var modalType = document.getElementById("modal-type");
+            var modalProductName = document.getElementById("modal-product-name");
+            var modalProductPrice = document.getElementById("modal-product-price");
+            var modalProductType = document.getElementById("modal-product-type");
+            var closeButton = document.querySelector(".close-button");
+    
+            function openModal(productId) {
+                var product = document.querySelector(`.product[data-name="${productId}"]`);
+    
+                var image = product.querySelector("img").src;
+                var title = product.querySelector(".product-title").textContent;
+                var price = product.getAttribute("data-price");
+                var discountedPriceElement = product.querySelector(".discounted-price");
+                var discountedPrice = discountedPriceElement ? discountedPriceElement.textContent : '';
+                var type = product.getAttribute("data-type");
+                
+                modalImage.src = image;
+                modalTitle.textContent = title;
+                modalType.textContent = type;
+    
+                if (discountedPrice) {
+                    modalPrice.querySelector('.original-price').textContent = price;
+                    modalPrice.querySelector('.discounted-price').textContent = discountedPrice;
+                    modalProductPrice.value = discountedPrice; 
+                } else {
+                    modalPrice.textContent = price;
+                    modalProductPrice.value = price; 
+                }
+    
+                modalProductName.value = title; 
+                modalProductType.value = type; 
+                modal.style.display = "block";
+            }
+    
+            document.querySelectorAll(".product img, .product").forEach(function(element) {
+                element.addEventListener("click", function() {
+                    var productId = this.closest(".product").dataset.name;
+                    openModal(productId);
+                });
+            });
+    
+            closeButton.addEventListener("click", function() {
+                modal.style.display = "none";
+            });
+    
+            window.addEventListener("click", function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+    
+            var modalForm = document.getElementById('modal-form');
+            modalForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                var formData = new FormData(this);
+    
+                
+                var actionUrl;
+                if (mmustudent) {
+                    actionUrl = '/add_to_cart/' + formData.get('username');
+                } else {
+                    actionUrl = '/notadd_to_cart/' + formData.get('username');
+                }
+    
+                formData.set('price', formData.get('price')); 
+                fetch(actionUrl, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Product added to cart successfully');
+                        modal.style.display = "none";
+                    } else {
+                        console.error('Failed to add product to cart');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error adding product to cart:', error);
+                });
+            });
+        });
+    </script>
 
 
     <div class="conclusion">

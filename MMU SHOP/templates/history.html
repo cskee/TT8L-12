@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .product-info {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+            width: 60%;
+            margin: auto;
+        }
+        .footer {
+            margin-top: 20px;
+            font-style: italic;
+            color: #666;
+        }
+
+        
+        .home {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .home:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="home">
+        {% if mmustudent%}
+        <a href="{{url_for('mmustudent',name=name)}}">Home</a>
+        {% else %}
+        <a href="{{url_for('notmmustudent',name=name)}}">Home</a>
+        {% endif %}
+    </div>
+    <div class="header">
+        {{ history_products[0].username }}'s History Payment
+    </div>
+
+    {% for profile in history_products %}
+    <div class="product-info">
+        <h2>Product Information</h2>
+        <p><strong>Product Name:</strong> {{ profile.product_name }}</p>
+        {% if mmustudent%}
+        <p><strong>Price:</strong> {{ profile.price }}</p>
+        {% else %}
+        <p><strong>Price:</strong>RM {{ profile.price }}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <div class="footer">
+        &copy; MMU SHOP
+    </div>
+</body>
+</html>
