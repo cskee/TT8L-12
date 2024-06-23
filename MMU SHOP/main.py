@@ -25,10 +25,7 @@ def write_data(product, username):
         file.write(f"{product['username']},{product['product_name']},{product['price']},{product['type']},{product['image']}\n")
 
     
-    create_user_file(username)
-    user_product_file = f"{username}_products.txt"
-    with open(user_product_file, 'a') as file:
-        file.write(f"{product['username']},{product['product_name']},{product['price']},{product['type']},{product['image']}\n")
+    
 
     
 
@@ -68,6 +65,213 @@ def read_data(username):
                 username, product_name, price, p_type, image = parts
                 products.append({'username':username,'product_name': product_name, 'price': price, 'type': p_type, 'image': image})
     return products
+
+def add_to_cart_write_data(add_to_cart_products,name):
+    username = name
+    print(f'username:{username}')
+    try:
+        with open('add_to_cart.txt', 'a') as file:
+            file.write(f"{add_to_cart_products['username']},{add_to_cart_products['product_name']},{add_to_cart_products['price']},{add_to_cart_products['type']}\n")
+            print("Data appended to add_to_cart.txt successfully.")
+            print('RM' + add_to_cart_products['price'])
+
+        create_user_file(username)
+        user_product_file = f"{username}_products.txt"
+        with open(user_product_file, 'a') as file:
+            file.write(f"{add_to_cart_products['username']},{add_to_cart_products['product_name']},{add_to_cart_products['price']},{add_to_cart_products['type']}\n")
+    except Exception as e:
+        print(f"Error writing to add_to_cart.txt: {e}")
+        raise
+
+def add_to_cart_read_data(username):
+   products = []
+   total_price = 0.0
+   create_user_file(username)
+   user_product_file = f"{username}_products.txt"
+   with open(user_product_file, 'r') as file:
+       for line in file:
+           parts = line.strip().split(',')
+           if len(parts) == 4:
+               username, product_name, price, p_type = parts
+               if 'RM ' in price:
+                    try:
+                        price = float(price.split('RM ')[1])
+                    except (IndexError, ValueError) as e:
+                        price = 0.0
+                        print(f"Error processing price for {username}: {e}")
+               else:
+                    price = float(price.strip())
+ 
+               products.append({'username':username,'product_name': product_name, 'price': price, 'type': p_type})
+               total_price += price
+   return products
+
+def payment_read_data():
+    products = []
+    with open('add_to_cart.txt','r') as file:
+        for line in file:
+            parts = line.strip().split(',')
+            if len(parts) == 4:
+                username, product_name, price, p_type = parts
+                products.append({'username':username,'product_name': product_name, 'price': price, 'type': p_type})
+    return products
+
+def history_read_data():
+    products = []
+    with open('payment.txt','r') as file:
+        for line in file:
+            parts = line.strip().split(',')
+            if len(parts) == 4:
+                username, product_name, price, p_type = parts
+                products.append({'username':username,'product_name': product_name, 'price': price, 'type': p_type})
+    return products
+
+
+
+def payment_function(payment_products,name):
+    username = name
+    with open('payment.txt','a') as file:
+        for product in payment_products:
+            file.write(f"{product['username']},{product['product_name']},{product['price']},{product['type']}\n")
+
+    updated_lines = []
+    with open('add_to_cart.txt', 'r') as file:
+        for line in file:
+            parts = line.strip().split(',')
+            if len(parts) == 4 and not any(p['product_name'] == parts[1] for p in payment_products):
+                updated_lines.append(line)
+
+    with open('add_to_cart.txt', 'w') as file:
+        for line in updated_lines:
+            file.write(line)
+
+    deleted_products = []
+    create_user_file(username)
+    user_product_file = f"{username}_products.txt"
+    with open(user_product_file, 'r') as file:
+        for line in file:
+            parts = line.strip().split(',')
+            if len(parts) == 4 and not any(p['product_name'] == parts[1] for p in payment_products):
+                deleted_products.append(line)
+
+    with open(user_product_file, 'w') as file:
+        for line in updated_lines:
+            file.write(line)
+    
+
+
+
+@app.route('/add_to_cart/<name>', methods=['POST'])
+def add_to_cart(name):
+    if request.method == 'POST':
+        username = request.form.get('username')
+        name = username
+        product_name = request.form.get('product_name')
+        price = request.form.get('price')
+        product_type = request.form.get('type')
+
+        add_to_cart_products = {
+            'username': username,
+            'product_name': product_name,
+            'price': price,
+            'type': product_type,
+        }
+
+        
+        add_to_cart_write_data(add_to_cart_products,name=name)
+        
+
+        if 'RM' in add_to_cart_products['price']:
+            return redirect(url_for('mmustudent',name=name)) if name else redirect(url_for('login'))
+        else:
+            return redirect(url_for('notmmustudent',name=name)) if name else redirect(url_for('login'))
+        
+    return redirect(url_for('login'))
+
+@app.route('/notadd_to_cart/<name>', methods=['POST'])
+def notadd_to_cart(name):
+    if request.method == 'POST':
+        print(request.form) 
+        username = request.form.get('username')
+        name = username
+        product_name = request.form.get('product_name')
+        price = request.form.get('price')
+        product_type = request.form.get('type')
+        
+
+        if not price.startswith('RM'):
+            price = 'RM' + price.strip()
+
+        add_to_cart_products = {
+            'username': username,
+            'product_name': product_name,
+            'price':'RM' + price,
+            'type': product_type,
+        }
+        print(f"Username: {username}, Product Name: {product_name}, Price: {price}, Type: {product_type}")
+        try:
+            add_to_cart_write_data(add_to_cart_products, name=name)
+            flash('Product added successfully', 'success')
+            return redirect(url_for('notmmustudent', name=name))
+        except Exception as e:
+            flash(f'Error adding product: {e}', 'error')
+            return redirect(url_for('notmmustudent', name=name))
+        
+@app.route('/history/<name>')
+def history(name):
+    payment_products = history_read_data()
+    history_products = [product for product in payment_products if product['username'] == name]
+    return render_template('history.html',name=name,mmustudent=mmustudent,history_products=history_products)
+
+@app.route('/nothistory/<name>')
+def nothistory(name):
+    payment_products = history_read_data()
+    history_products = [product for product in payment_products if product['username'] == name]
+    return render_template('history.html',name=name,history_products=history_products)
+
+
+@app.route('/some_route/<name>')
+def some_route(name):
+    print(f'some_route:{name}')
+    if mmustudent is True: 
+        return redirect(url_for('payment',name=name))
+    else:
+        return redirect(url_for('notpayment',name=name))
+
+@app.route('/bagtohomepage/<name>')
+def bag_to_homepage(name):
+    if mmustudent:
+        return redirect(url_for('mmustudent',name=name))
+    else:
+        return redirect(url_for('notmmustudent',name=name))
+
+@app.route('/payment/<name>')
+def payment(name):
+    payment_products = payment_read_data()
+    payment_function(payment_products,name)
+    return redirect(url_for('login'))
+
+@app.route('/notpayment/<name>')
+def notpayment(name):
+    payment_products = payment_read_data()
+    payment_function(payment_products,name)
+    return redirect(url_for('login'))
+
+
+@app.route('/add_to_cart/<name>')
+def bag(name):
+    print(f'name:{name}')
+    add_to_cart_products = add_to_cart_read_data(name)
+    total_price = sum(item['price'] for item in add_to_cart_products)
+    return render_template('cart.html',name=name,add_to_cart_products=add_to_cart_products,total_price=total_price,mmustudent=mmustudent)
+
+@app.route('/notadd_to_cart/<name>')
+def notbag(name):
+    print(f'name:{name}')
+    add_to_cart_products = add_to_cart_read_data(name)
+    total_price = sum(item['price'] for item in add_to_cart_products)
+    return render_template('cart.html',name=name,add_to_cart_products=add_to_cart_products,total_price=total_price)
+
 
 @app.route('/uploadproduct/<name>')
 def uploadproduct(name):

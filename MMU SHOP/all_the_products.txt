@@ -5,3 +5,7 @@ yoojunyang0323,jeans,2,2-handshop,jeans.jpg
 1221108062,watch1,75,electronic-device,watch1.jpg
 1221108062,car sticker,5,mmu_stuff,carsticker.png
 1221108062,basketball2,95,men,basketball2.jpg
+1221108062,dumbill,55,men,dumbell1.jpg
+1221108062,womenshirt,25,women,e57193d6ee7d6cb489d6f77c11b1bb79.jpg_720x720q80.jpg
+1221108062,speaker,50,electronic-device,speaker.jpg
+1221108062,watch2,500,men,watch2.jpg

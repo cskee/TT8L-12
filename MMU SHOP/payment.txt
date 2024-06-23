@@ -1,0 +1,16 @@
+yoojunyang0323,jk,80,women1221108062,womenshirt,RM 22.50,women
+1221108062,basketball1,RM 76.50,men
+1221108062,womenshirt,RM 22.50,women
+yoojunyang0323,jk,80,women
+yoojunyang0323,womenshirt,25,women
+yoojunyang0323,basketball1,85,men
+yoojunyang0323,watch1,75,electronic-device
+1221108062,womenshirt,RM 22.50,women
+1221108062,womenshirt,RM 22.50,women
+1221108062,womenshirt,RM 22.50,women
+1221108062,speaker,RM 45.00,electronic-device
+1221108062,watch1,RM 67.50,electronic-device
+1221108062,watch1,RM 67.50,electronic-device
+1221108062,watch2,RM 450.00,men
+yoojunyang0323,womenshirt,25,women
+1221108062,womenshirt,RM 22.50,women

@@ -2,7 +2,7 @@
 <head>
 <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<title>MMU Shop</title>
+<title>MMU SHOP</title>
 </head>
 <body>
 
@@ -53,6 +53,10 @@
         <div class="dropdown-content">
             <a href="{{url_for('uploadproduct',name=name,mmustudent=mmustudent)}}">Add your product</a>
             <p></p>
+            <a href="{{url_for('bag',name=name)}}">Bag</a>
+            <p></p>
+            <a href="{{url_for('history',name=name)}}">History Payment</a>
+            <p></p>
             <a href="{{url_for('login')}}">Log out</a>
         </div>
         
@@ -67,6 +71,10 @@
         <p>{{  name  }}</p>
         <div class="dropdown-content">
             <a href="{{url_for('notuploadproduct',name=name)}}">Add your product</a>
+            <p></p>
+            <a href="{{url_for('notbag',name=name)}}">Bag</a>
+            <p></p>
+            <a href="{{url_for('nothistory',name=name)}}">History Payment</a>
             <p></p>
             <a href="{{url_for('login')}}">Log out</a>
         </div>
